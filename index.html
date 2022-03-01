@@ -1,75 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="./boxicons-2.0.7/css/boxicons.min.css">
-</head>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="./boxicons-2.0.7/css/boxicons.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://kit-pro.fontawesome.com/releases/v5.12.0/css/pro.min.css"
+    />
+  </head>
 
-<body>
+  <body>
+    <div class="model">
+
+    </div>
     <header class="header" id="header">
-        <div class="container">
+      <div class="container">
+        <div class="header__menu" id="header__menu">
+          <div class="header__menu__mobile-toggle" id="nav-toggle">
+            <i class="bx bx-menu"></i>
+          </div>
+          <div class="header__menu__left" id="nav-menu">
+            <div class="header__menu__left__close" id="nav-close">
+              <i class="bx bxs-chevron-left"></i>
+            </div>
+            <div class="header__menu__item header__menu__left__item">
+              <a href="#" class="nav__link">Home</a>
+            </div>
+            <div class="header__menu__item header__menu__left__item">
+              <a href="#" class="nav__link">Shops</a>
+            </div>
+            <div class="header__menu__item header__menu__left__item">
+              <a href="#" class="nav__link">Products</a>
+            </div>
+            <div class="header__menu__item header__menu__left__item">
+              <a href="#" class="nav__link">About Us</a>
+            </div>
+            <div class="header__menu__item header__menu__left__item">
+              <a href="#" class="nav__link">Features</a>
+            </div>
+          </div>
+          <a href="/">
             <div class="header__logo">
-                <a href="/">
-                    <img src="images/logo_dark.png" />
-                </a>
+              <img src="images/logo_dark.png" />
             </div>
-            <div class="header__menu" id="header__menu">
-                <div class="header__menu__mobile-toggle" id = "nav-toggle">
-                    <i class='bx bx-menu'></i>
-                </div>
-                <div class="header__menu__left" id = "nav-menu">
-                    <div class="header__menu__left__close" id="nav-close">
-                        <i class='bx bxs-chevron-left'></i>
-                    </div>
-                    <div class="header__menu__item header__menu__left__item">
-                        <a href="#" class="nav__link">Home</a>
-                    </div>
-                    <div class="header__menu__item header__menu__left__item">
-                        <a href="#" class="nav__link">Shops</a>
-                    </div>
-                    <div class="header__menu__item header__menu__left__item">
-                        <a href="#" class="nav__link">Products</a>
-                    </div>
-                    <div class="header__menu__item header__menu__left__item">
-                        <a href="#" class="nav__link">Pages</a>
-                    </div>
-                    <div class="header__menu__item header__menu__left__item">
-                        <a href="#" class="nav__link">Blog</a>
-                    </div>
-                    <div class="header__menu__item header__menu__left__item">
-                        <a href="#" class="nav__link">Features</a>
-                    </div>
-
-                </div>
-                <div class="header__menu__right">
-                    <div class="header__menu__item header__menu__right__item">
-                        <a href="/cart"><i class='bx bx-search'></i></a>
-                    </div>
-
-                    <div class="header__menu__item header__menu__right__item">
-                        <a href="/"> <i class='bx bx-user'></i></a>
-                    </div>
-                    <div class="header__menu__item header__menu__right__item">
-                        <a href="/">
-                            <i class='bx bx-star'></i>
-                        </a>
-                    </div>
-                    <div class="header__menu__item header__menu__right__item">
-                        <a href="/">
-                            <i class='bx bx-shopping-bag'></i>
-                        </a>
-                    </div>
-                </div>
+          </a>
+          <div class="header__menu__right">
+            <div class="header__menu__item header__menu__right__item btn-search">
+              <i class="bx bx-search"></i>
             </div>
+
+            <div class="header__menu__item header__menu__right__item">
+              <a href="/"> <i class="bx bx-user"></i></a>
+            </div>
+            <div class="header__menu__item header__menu__right__item">
+              <a href="/">
+                <i class="bx bx-star"></i>
+              </a>
+            </div>
+            <div class="header__menu__item header__menu__right__item">
+              <a href="/">
+                <i class="bx bx-shopping-bag"></i>
+              </a>
+            </div>
+          </div>
         </div>
+      </div>
     </header>
-    <main style="height: 2000px; background-color: #666666;"></main>
-    <script src="js/index.js"></script>
-</body>
+    <div
+      class="container d-flex justify-between align-center container--search"
+    >
+      <div class="d-flex justify-between align-center title--search">
+        <p>Search our store</p>
+        <div class="close--btn">
+          <i class="far fa-times"></i>
+        </div>
+      </div>
 
+      <div class="logo--search">
+        <img src="images/logo_dark.png" />
+      </div>
+      <div class="input--search">
+        <input type="text" placeholder="Search Products" />
+        <i class="bx bx-search"></i>
+      </div>
+      <ul class="d-flex right--options">
+        <li>
+          <a href="/"> <i class="bx bx-user"></i></a>
+        </li>
+        <li>
+          <a href="/">
+            <i class="bx bx-star"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            <i class="bx bx-shopping-bag"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <script type="module" src="js/index.js"></script>
+    <script src="/dist/header.js"></script>
+    <!-- <script type="module" src="/dist/test.js"></script>
+    <script type="module" src="/dist/test2.js"></script> -->
+  </body>
 </html>

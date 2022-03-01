@@ -20,3 +20,5 @@ function linkAction(){
     navMenu.classList.remove('active')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
+
+export const calculate = (a, b) => a + b;

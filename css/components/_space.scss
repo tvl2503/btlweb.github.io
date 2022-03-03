@@ -1,0 +1,29 @@
+$space-default: (2, 4, 8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 40, 56, 64, 100) !default;
+$position: (
+    "l": "left",
+    "r": "right",
+    "b": "bottom",
+    "t": "top"
+) !default;
+
+@each $size in $space-default {
+    @each $p, $value in $position {
+        .m#{$p}-#{$size} {
+            margin-#{$value}: #{$size}px;
+        }
+        .p#{$p}-#{$size} {
+            padding-#{$value}: #{$size}px;
+        }
+    }
+}
+
+
+@each $size in $space-default {
+    .f-#{$size} {
+        font-size: #{$size}px;
+    }
+    .gap-#{$size} {
+        gap: #{$size}px;
+    }
+}
+

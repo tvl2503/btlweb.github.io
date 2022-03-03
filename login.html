@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Login Page</title>
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="./boxicons-2.0.7/css/boxicons.min.css" />
     <link
@@ -45,7 +45,9 @@
             </div>
           </a>
           <div class="header__menu__right">
-            <div class="header__menu__item header__menu__right__item btn-search">
+            <div
+              class="header__menu__item header__menu__right__item btn-search"
+            >
               <i class="bx bx-search"></i>
             </div>
 
@@ -99,7 +101,42 @@
         </li>
       </ul>
     </div>
+    <div class="container container-form pt-64">
+      <div class="title--form text-center pt-40 pb-40">
+        <p class="f-32">Log in</p>
+        <ul
+          class="d-flex justify-center align-center pt-16 f-14 breadcrumb--items"
+        >
+          <li>Home <i class="fal fa-angle-right"></i></li>
+          <li>Account</li>
+        </ul>
+      </div>
+      <div class="d-grid grid-col-2 form--group gap-64 container--login">
+        <form class="form-control">
+          <h5>Log In</h5>
+          <div class="d-grid gap-12">
+            <div class="form-group">
+              <input data-validate="email" type="email" placeholder="Email" required />
+            </div>
+            <div class="form-group">
+              <input data-validate="password" type="password" placeholder="Password" required />
+            </div>
+            <a class="f-14 pt-8 pb-8" href="#">Forgot your password?</a>
+            <button type="submit" class="btn btn-black">Sign In</button>
+          </div>
+        </form>
+        <div class="register--container">
+          <h5>New Customer</h5>
+          <p class="pb-24">
+            Sign up for early Sale access plus tailored new arrivals, trends and
+            promotions. To opt out, click unsubscribe in our emails.
+          </p>
+          <a href="#"><button class="btn btn-black">Register</button></a>
+        </div>
+      </div>
+    </div>
     <script type="module" src="js/index.js"></script>
     <script type="module" src="/dist/ts/header.js"></script>
+    <script type="module" src="/dist/ts/login.js"></script>
   </body>
 </html>

@@ -8,6 +8,7 @@
 }
 html{
     font-size: 16px;
+    line-height: 24px;
     @include mobile {
         font-size: 11px;
     }
@@ -63,21 +64,6 @@ img{
         }
     }
 }
-
-
-// .main {
-//     margin-top: $header-height;
-//     margin-bottom: 2rem;
-//     min-height: 100vh;
-
-//     @include tablet {
-//         margin-top: calc(#{$header-tablet-height} + 20px);
-//     }
-
-//     @include mobile {
-//         margin-top: calc(#{$header-mobile-height} + 10px);
-//     }
-// }
 .container{
     width: 100%;
     max-width: $desktop-width;
@@ -91,25 +77,4 @@ img{
     @include mobile {
         padding: 0 10px;
     }
-}
-.d-flex {
-    display: flex;
-}
-.d-block {
-    display: block;
-}
-.d-grid{
-    display: grid;
-}
-.justify-center {
-    justify-content: center;
-}
-.justify-between {
-    justify-content: space-between;
-}
-.align-center {
-    align-items: center;
-}
-.grid {
-    display: grid;
 }

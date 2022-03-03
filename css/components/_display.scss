@@ -1,0 +1,32 @@
+$display: (flex, block, none, grid) !default;
+
+$property_flex: (
+  start: flex-start,
+  center: center,
+  end: flex-end,
+  between: space-between,
+) !default;
+
+$property_text: (start, center, end) !default;
+
+@each $d in $display {
+  .d-#{$d} {
+    display: $d;
+  }
+}
+
+@each $flexName, $flexProperty in $property_flex {
+  .justify-#{$flexName} {
+    justify-content: $flexProperty;
+  }
+  .align-#{$flexName} {
+    align-items: $flexProperty;
+  }
+}
+
+@each $text in $property_text {
+  .text-#{$text} {
+    text-align: $text;
+  }
+}
+

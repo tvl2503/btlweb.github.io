@@ -1,3 +1,9 @@
+import { classListToggleElement } from "../utils/classList.js";
+import {
+  insertStringElement,
+  modelElement,
+} from "../utils/element/utilsElement.js";
+
 let firstScroll = 0;
 let currentScroll = 0;
 const deboundScrollHandler = () => {
@@ -19,22 +25,29 @@ const transitionHeader = () => {
 transitionHeader();
 
 const transitionSearch = () => {
-  const overlay = document.querySelector(".model");
   const button = document.querySelector(".btn-search");
-  const header = document.querySelector(".container--search");
-
+  const header = document.querySelector(".container--search")!;
   const toggleHeader = () => {
-    header?.classList.toggle("reset--translate");
+    const searchFieldIsOpen = classListToggleElement(
+      header,
+      "reset--translate"
+    );
+    const overlayElement = modelElement("overlay--search");
+
+    if (searchFieldIsOpen) {
+      insertStringElement(document.body, overlayElement, "afterbegin");
+      const overlaySearch = document?.querySelector("#overlay--search");
+      overlaySearch?.addEventListener("click", toggleHeader);
+    } else {
+      const searchOverlay = document?.querySelector('#overlay--search');
+      searchOverlay?.remove();
+    }
   };
   button?.addEventListener("click", toggleHeader);
-  overlay?.addEventListener("click", toggleHeader);
 
   const input = header?.querySelector("input");
   input?.addEventListener("input", async (event: Event) => {
     const { value } = <HTMLInputElement>event.target;
-    // const response = await fetch('url.....');
-    // const data = await response.json();
-    // console.log(data);
   });
 };
 

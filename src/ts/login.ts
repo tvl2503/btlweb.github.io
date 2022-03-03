@@ -10,6 +10,7 @@ const insertMessageCallback = (valueCallback: callbackFn, element: HTMLInputElem
     const messageBefore = document.getElementById(id);
     if (isTouched && !isValid) {
         const parentElement = element.parentElement;
+        element.classList.add('error--input');
         if (parentElement?.classList.contains('form-group')) {
             if (!messageBefore) {
                 insertStringElement(parentElement, `<p class="error--message" id=${id}>${message}</p>`, 'afterend');
@@ -17,6 +18,7 @@ const insertMessageCallback = (valueCallback: callbackFn, element: HTMLInputElem
         };
     } else {
         messageBefore?.remove();
+        element.classList.remove('error--input');
     }
 }
 input.forEach(item => {

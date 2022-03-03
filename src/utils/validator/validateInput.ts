@@ -10,20 +10,22 @@ export const validateInput = (
 ) => {
   let isTouched = false;
   let isValid = false;
-  input.addEventListener("input", () => {
+  input.oninput = () => {
     const value = input.value;
     switch (typeValidate) {
       case EMAIL:
         isValid = isEmail(value);
+        break;
       case PASSWORD:
         isValid = isPassword(value);
+        break;
     }
     cbInputEvent({
       isValid,
       isTouched,
       type: 'input'
     });
-  });
+  }
   input.onblur = () => {
     isTouched = true;
     cbTouched({

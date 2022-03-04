@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { AxiosConfigParams } from '../models/PropsObject';
+import { AxiosConfigParams } from '../models/PropsObject.js';
 
 const request = async (props: AxiosConfigParams) => {
     return new Promise(async (resolve, reject) => {

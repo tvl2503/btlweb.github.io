@@ -1374,6 +1374,16 @@ img {
   line-height: 24px;
 }
 
+.btn-primary {
+  border: none;
+}
+
+.btn-outlined {
+  border: 1px solid #000;
+  background: transparent;
+  color: #000;
+}
+
 .btn-blue {
   color: #fff;
   background: #4267b2;
@@ -1415,7 +1425,23 @@ input {
   border-radius: 4px;
 }
 
+.form-group {
+  position: relative;
+}
+
 .form-group input {
   width: 100%;
+}
+
+.form-group input[type='password'] {
+  padding-right: 40px;
+}
+
+.form-group i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 /*# sourceMappingURL=index.css.map */

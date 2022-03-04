@@ -103,18 +103,34 @@
     </div>
     <div class="container container-form pt-64">
       <div class="title--form text-center pt-64 pb-64">
-        <p class="f-32">Log in</p>
+        <p class="f-32 pb-16">Register</p>
         <ul
-          class="d-flex justify-center align-center pt-32 f-14 breadcrumb--items"
+          class="d-flex justify-center align-center pt-16 f-14 breadcrumb--items"
         >
           <li>Home <i class="fal fa-angle-right"></i></li>
-          <li>Account</li>
+          <li>Create Account</li>
         </ul>
       </div>
-      <div class="d-grid grid-col-2 form--group gap-64 container--login">
+      <div class="form--group container--login">
         <form class="form-control">
-          <h5>Log In</h5>
+          <h5>Register</h5>
           <div class="d-grid gap-12">
+            <div class="form-group">
+              <input
+                data-validate="required"
+                type="text"
+                placeholder="First Name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                data-validate="name"
+                type="text"
+                placeholder="Last Name"
+                required
+              />
+            </div>
             <div class="form-group">
               <input
                 data-validate="email"
@@ -132,18 +148,14 @@
               />
               <i class="far fa-eye"></i>
             </div>
-            <a class="f-14 pt-8 pb-8" href="#">Forgot your password?</a>
-            <button type="submit" class="btn btn-black">Sign In</button>
+            <p class="help-block f-14 pt-10 pb-10">
+              Sign up for early Sale access plus tailored new arrivals, trends
+              and promotions. To opt out, click unsubscribe in our emails.
+            </p>
+            <button type="submit" class="btn btn-black">Register</button>
+            <button type="button" class="btn btn-outlined">Login</button>
           </div>
         </form>
-        <div class="register--container">
-          <h5>New Customer</h5>
-          <p class="pb-24">
-            Sign up for early Sale access plus tailored new arrivals, trends and
-            promotions. To opt out, click unsubscribe in our emails.
-          </p>
-          <a href="#"><button class="btn btn-black">Register</button></a>
-        </div>
       </div>
     </div>
     <script type="module" src="dist/js/index.js"></script>

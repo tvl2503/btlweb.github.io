@@ -1,5 +1,5 @@
-import { EMAIL, PASSWORD } from "../../constants/type.js";
-import { isEmail, isPassword } from "./input.js";
+import { EMAIL, PASSWORD, REQUIRED } from "../../constants/type.js";
+import { isEmail, isPassword, isRequired } from "./input.js";
 import { callbackFn } from "../../models/validate.js";
 
 export const validateInput = (
@@ -19,6 +19,9 @@ export const validateInput = (
       case PASSWORD:
         isValid = isPassword(value);
         break;
+      case REQUIRED:
+      default:
+        isValid = isRequired(value);
     }
     cbInputEvent({
       isValid,

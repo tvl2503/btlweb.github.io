@@ -12,4 +12,14 @@ input {
     input {
         width: 100%;
     }
+    input[type='password'] {
+        padding-right: 40px;
+    }
+    position: relative;
+    i {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }

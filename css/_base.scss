@@ -26,6 +26,9 @@ a{
 a:hover {
     color: $main-color;
 }
+.pointer {
+    cursor: pointer;
+}
 // a:hover{
 //     color: $main-color;
 //     font-weight: 800;
@@ -62,6 +65,11 @@ img{
         @include mobile {
             grid-template-columns: repeat($val, 1fr);
         }
+    }
+}
+@each $sd, $value in $shadow {
+    .shadow-#{$sd} {
+        box-shadow: $value;
     }
 }
 .container{

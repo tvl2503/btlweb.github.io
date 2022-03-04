@@ -1,5 +1,5 @@
 
-$header-height: 4rem;
+$header-height: 64px;
 $main-bg: #fff;
 $main-color: #666666;
 
@@ -16,6 +16,10 @@ $header-tablet-height: 70px;
 $header-mobile-height: 40px;
 $header-shrink-height: 70px;
 
+@function shadow ($value) {
+    @return 0px 2px 8px rgba(0, 0, 0, $value);
+}
+
 $box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
 $mb-0-25: .25rem;
@@ -26,6 +30,11 @@ $mb-1-25: 1.25rem;
 $mb-1-5: 1.5rem;
 $mb-2: 2rem;
 $mb-2-5: 2.5rem;
+$shadow: (
+    sm: shadow(0.15),
+    md: shadow(0.18),
+    lg: shadow(0.2)
+)!default;
 
 
 $colors: (
@@ -38,6 +47,7 @@ $colors: (
     "red": #ff0000,
 );
 
+$sm-mobile-width: 576px;
 $mobile-width: 768px;
 $tablet-width: 991px;
 $desktop-width: 1140px;

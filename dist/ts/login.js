@@ -2,6 +2,8 @@ import { EMAIL, PASSWORD, REQUIRED } from "../constants/type.js";
 import { classListToggleElement, setAttributeElement } from "../utils/classList.js";
 import { insertStringElement } from "../utils/element/utilsElement.js";
 import { validateInput } from "../utils/validator/validateInput.js";
+import { getHeader } from "../layout/header.js";
+getHeader();
 const input = document.querySelectorAll('input');
 export const insertMessageCallback = (valueCallback, element, message, id) => {
     const { isTouched, isValid } = valueCallback;

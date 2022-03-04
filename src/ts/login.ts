@@ -3,7 +3,9 @@ import { callbackFn } from "../models/validate.js";
 import { classListToggleElement, setAttributeElement } from "../utils/classList.js";
 import { insertStringElement } from "../utils/element/utilsElement.js";
 import { validateInput } from "../utils/validator/validateInput.js";
+import { getHeader } from "../layout/header.js";
 
+getHeader();
 const input = document.querySelectorAll('input');
 
 export const insertMessageCallback = (valueCallback: callbackFn, element: HTMLInputElement, message: string, id: string) => {

@@ -1,6 +1,6 @@
-import { EMAIL, PASSWORD, REQUIRED } from "../../constants/type";
-import { isEmail, isPassword, isRequired } from "./input";
-import { callbackFn } from "../../models/validate";
+import { EMAIL, PASSWORD, REQUIRED } from "../../constants/type.js";
+import { isEmail, isPassword, isRequired } from "./input.js";
+import { callbackFn } from "../../models/validate.js";
 
 export const validateInput = (
   input: HTMLInputElement,

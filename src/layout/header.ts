@@ -1,4 +1,4 @@
-import { insertStringElement } from "../utils/element/utilsElement.js";
+import { insertStringElement } from "../utils/element/utilsElement";
 
 export const getHeader = () => {
   const header = `

@@ -1,8 +1,8 @@
-import { EMAIL, PASSWORD, REQUIRED } from "../constants/type.js";
-import { classListToggleElement, setAttributeElement } from "../utils/classList.js";
-import { insertStringElement } from "../utils/element/utilsElement.js";
-import { validateInput } from "../utils/validator/validateInput.js";
-import { getHeader } from "../layout/header.js";
+import { EMAIL, PASSWORD, REQUIRED } from "../constants/type";
+import { classListToggleElement, setAttributeElement } from "../utils/classList";
+import { insertStringElement } from "../utils/element/utilsElement";
+import { validateInput } from "../utils/validator/validateInput";
+import { getHeader } from "../layout/header";
 getHeader();
 const input = document.querySelectorAll('input');
 export const insertMessageCallback = (valueCallback, element, message, id) => {

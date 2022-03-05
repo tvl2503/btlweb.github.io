@@ -1,10 +1,18 @@
 const path = require('path');
 
+const entries = {
+    index: ['./src/ts/index.ts', './src/ts/header.ts', './dist/js/index.js'],
+    auth: ['./src/ts/login.ts', './src/ts/header.ts', './dist/js/index.js'],
+}
+
+
 module.exports = {
     mode: 'development',
-    entry: ['./src/ts/login.ts', './src/ts/header.ts'],
+    entry: {
+        ...entries
+    },
     output: {
-        filename: 'bundle.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
         publicPath: 'dist'
     },
@@ -15,6 +23,13 @@ module.exports = {
                 test: /\.ts$/,
                 use: 'ts-loader',
                 exclude: /node_modules/
+            },
+            {
+                test: /\.css$i/,
+                loader: "css-loader",
+                options: {
+                    url: true
+                }
             }
         ]
     },
@@ -23,6 +38,7 @@ module.exports = {
     },
     devServer: {
         port: 9090,
+        historyApiFallback: true
     }
 
 }

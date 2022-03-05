@@ -1,8 +1,8 @@
-import { classListToggleElement } from "../utils/classList.js";
+import { classListToggleElement } from "../utils/classList";
 import {
   insertStringElement,
   modelElement,
-} from "../utils/element/utilsElement.js";
+} from "../utils/element/utilsElement";
 
 let firstScroll = 0;
 let currentScroll = 0;

@@ -7,8 +7,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { classListToggleElement } from "../utils/classList.js";
-import { insertStringElement, modelElement, } from "../utils/element/utilsElement.js";
+import { classListToggleElement } from "../utils/classList";
+import { insertStringElement, modelElement, } from "../utils/element/utilsElement";
 let firstScroll = 0;
 let currentScroll = 0;
 const deboundScrollHandler = () => {

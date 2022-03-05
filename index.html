@@ -9,104 +9,30 @@
     <link rel="stylesheet" href="./boxicons-2.0.7/css/boxicons.min.css" />
     <link
       rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://kit-pro.fontawesome.com/releases/v5.12.0/css/pro.min.css"
     />
   </head>
   <body>
-    <header class="header shadow-sm" id="header">
-      <div class="container">
-        <div class="d-grid align-items-center header__menu" id="header__menu">
-          <div class="header__menu__mobile-toggle pointer" id="nav-toggle">
-            <i class="bx bx-menu"></i>
-          </div>
-          <div class="header__menu__left" id="nav-menu">
-            <div class="header__menu__left__close" id="nav-close">
-              <i class="fal fa-angle-left"></i>
-            </div>
-            <div class="header__menu__item header__menu__left__item">
-              <a href="#" class="nav__link">Home</a>
-              <i class="fal fa-angle-down"></i>
-            </div>
-            <div class="header__menu__item header__menu__left__item">
-              <a href="#" class="nav__link">Shops</a>
-              <i class="fal fa-angle-down"></i>
-            </div>
-            <div class="header__menu__item header__menu__left__item">
-              <a href="#" class="nav__link">Products</a>
-              <i class="fal fa-angle-down"></i>
-            </div>
-            <div class="header__menu__item header__menu__left__item">
-              <a href="#" class="nav__link">About Us</a>
-              <i class="fal fa-angle-down"></i>
-            </div>
-          </div>
-          <a class="d-flex justify-center align-center h-100" href="/">
-            <div class="header__logo">
-              <img src="images/logo_dark.png" />
-            </div>
-          </a>
-          <div class="header__menu__right">
-            <div
-              class="header__menu__item header__menu__right__item btn-search"
-            >
-              <i class="bx bx-search"></i>
-            </div>
-
-            <div
-              class="header__menu__item header__menu__right__item user--option"
-            >
-              <a href="/"> <i class="bx bx-user"></i></a>
-            </div>
-            <div
-              class="header__menu__item header__menu__right__item favourite--option"
-            >
-              <a href="/">
-                <i class="bx bx-star"></i>
-              </a>
-            </div>
-            <div class="header__menu__item header__menu__right__item">
-              <a href="/">
-                <i class="bx bx-shopping-bag"></i>
-              </a>
-            </div>
-          </div>
-        </div>
+    <div id="header"></div>
+    <div class="swiper swiper--container">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        ...
       </div>
-    </header>
-    <div
-      class="container d-flex justify-between align-center container--search"
-    >
-      <div class="d-flex justify-between align-center title--search">
-        <p>Search our store</p>
-        <div class="close--btn">
-          <i class="far fa-times"></i>
-        </div>
-      </div>
-
-      <div class="logo--search">
-        <img src="images/logo_dark.png" />
-      </div>
-      <div class="input--search">
-        <input type="text" placeholder="Search Products" />
-        <i class="bx bx-search"></i>
-      </div>
-      <ul class="d-flex right--options">
-        <li>
-          <a href="/"> <i class="bx bx-user"></i></a>
-        </li>
-        <li>
-          <a href="/">
-            <i class="bx bx-star"></i>
-          </a>
-        </li>
-        <li>
-          <a href="/">
-            <i class="bx bx-shopping-bag"></i>
-          </a>
-        </li>
-      </ul>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
-    <script type="module" src="/dist/js/index.js"></script>
-    <script type="module" src="/dist/ts/header.js"></script>
+    <script src="/dist/index.js"></script>
+    <!-- <script src="/dist/js/index.js"></script> -->
   </body>
 </html>

@@ -1,5 +1,5 @@
-import { PropsObject } from "./PropsObject.js";
-import { callbackFn } from "./validate.js";
+import { PropsObject } from "./PropsObject";
+import { callbackFn } from "./validate";
 
 export {
     PropsObject,

@@ -10,5 +10,5 @@ export interface AxiosConfigParams {
     params?: PropsObject<any>;
     headers?: PropsObject<any>;
     method?: Method;
-    token?: string
+    token?: string;
 }

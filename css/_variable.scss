@@ -2,6 +2,7 @@
 $header-height: 64px;
 $main-bg: #fff;
 $main-color: #666666;
+$font-family: 'Poppins', sans-serif;
 
 $txt-main-color: #000;
 
@@ -53,3 +54,11 @@ $tablet-width: 991px;
 $desktop-width: 1140px;
 
 $numbers: (0, 1, 2, 3, 4, 5, 6, 7, 8);
+$weight: (
+    500,
+    600,
+    700,
+    800,
+    900,
+    bold
+) !default;

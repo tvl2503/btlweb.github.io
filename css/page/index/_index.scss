@@ -1,0 +1,65 @@
+.layout--top {
+  padding-top: $header-height;
+}
+.swiper--container {
+  height: calc(100vh - #{$header-height});
+  position: relative;
+  .swiper-slide {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .content-slide {
+      position: absolute;
+      top: 50%;
+      left: 30px;
+      transform: translateY(-50%);
+      transition: all .5s ease-in-out;
+      // opacity: 0;
+    }
+    @include tablet {
+      .content-slide {
+        display: none;
+      }
+    }
+  }
+  @include tablet {
+    height: auto;
+  }
+  .swiper-pagination {
+    position: absolute;
+    right: 32px;
+    left: auto !important;
+    @include flex(center, center);
+    flex-direction: column;
+    top: 0;
+    width: 30px !important;
+    span {
+      width: 16px;
+      height: 16px;
+      background: #000;
+      position: relative;
+      transition: all 0.15s cubic-bezier(0.25, 0.25, 0.1, 1);
+    }
+    gap: 16px;
+    @include tablet {
+      display: none !important;
+    }
+  }
+}
+.content-slide-active {
+  .content-slide {
+    top: 50% !important;
+    opacity: 1 !important;
+  }
+}
+
+.support-content {
+  position: absolute;
+  right: 16px;
+  bottom: 32px;
+  p {
+    border-right: 2px solid #000;
+  }
+}

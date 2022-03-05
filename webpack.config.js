@@ -1,8 +1,8 @@
 const path = require('path');
 
 const entries = {
-    index: ['./src/ts/index.ts', './src/ts/header.ts', './dist/js/index.js'],
-    auth: ['./src/ts/login.ts', './src/ts/header.ts', './dist/js/index.js'],
+    index: ['./src/ts/index.ts', './src/ts/header.ts', './js/index.js'],
+    auth: ['./src/ts/login.ts', './src/ts/header.ts', './js/index.js'],
 }
 
 

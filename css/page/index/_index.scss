@@ -15,7 +15,7 @@
       top: 50%;
       left: 30px;
       transform: translateY(-50%);
-      transition: all .5s ease-in-out;
+      transition: all 0.5s ease-in-out;
       // opacity: 0;
     }
     @include tablet {
@@ -61,5 +61,151 @@
   bottom: 32px;
   p {
     border-right: 2px solid #000;
+  }
+}
+.container--collections {
+  max-width: 100%;
+  @include mobile {
+    .swiper {
+      overflow: visible;
+    }
+    .swiper-slide {
+      width: 297px !important;
+    }
+  }
+  .swiper-pagination {
+    bottom: 0 !important;
+    span {
+      width: 24px;
+      height: 24px;
+      opacity: 1;
+      position: relative;
+      background: transparent;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #000;
+      }
+    }
+    .swiper-pagination-bullet-active {
+      border: 1px solid #000;
+    }
+  }
+  .swiper--collection {
+    padding-bottom: 64px !important;
+  }
+  @include tablet {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+.header--collections {
+  position: relative;
+  .title--collections {
+    line-height: 34px;
+  }
+  @include tablet {
+    padding-bottom: 24px;
+    .title--collections {
+      font-size: 24px;
+      text-align: center;
+      width: 100%;
+      font-weight: 400;
+    }
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: static;
+    left: auto;
+    right: auto;
+    width: 36px;
+    height: 36px !important;
+    height: 100%;
+    border-radius: 50%;
+    background: #000;
+    margin-top: 0;
+    transition: all .2s ease-in-out;
+    &:hover {
+      background: #4267b2;
+    }
+    &::after {
+      @extend .f-14;
+      color: #fff;
+    }
+  }
+  @include tablet {
+    .swiper-button-next, .swiper-button-prev {
+      display: none;
+    }
+  }
+  .swiper-button-prev {
+    margin-right: 50px;
+  }
+}
+
+.content--card {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 20px 30px;
+  width: 100%;
+  p {
+    &:last-child {
+      color: $main-color;
+    }
+  }
+  @include tablet {
+    position: static;
+    padding: 12px 0;
+    p {
+      &:first-child {
+        font-size: 16px;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+.access--card {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  transition: all .15s ease-in-out;
+  &:hover {
+    i {
+      color: #fff;
+    }
+    background: #000;
+  }
+}
+
+.card--item {
+  position: relative;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .64s cubic-bezier(.15,.75,.5,1);
+    border-radius: 8px;
+    @extend .shadow-sm;
+  }
+  &:hover {
+    img {
+      transform: scale(1.05);
+    }
+  }
+  @include tablet {
+    &:hover {
+      img {
+        transform: scale(1);
+      }
+    }
   }
 }

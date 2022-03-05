@@ -101,5 +101,5 @@ export const getHeader = () => {
       </ul>
     </div>
     `;
-  insertStringElement(document.getElementById("header")!, header, "afterbegin");
+  insertStringElement(document.getElementById("navigation")!, header, "afterbegin");
 };

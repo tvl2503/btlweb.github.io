@@ -24,3 +24,7 @@
         @content;
     }
 }
+
+@mixin padding($tb, $lf) {
+    padding: #{$tb}px #{$lf}px;
+}

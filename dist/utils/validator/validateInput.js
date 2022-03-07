@@ -1,20 +1,23 @@
-import { EMAIL, PASSWORD, REQUIRED } from "../../constants/type";
-import { isEmail, isPassword, isRequired } from "./input";
-export const validateInput = (input, typeValidate, cbInputEvent, cbTouched) => {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.validateInput = void 0;
+const type_1 = require("../../constants/type");
+const input_1 = require("./input");
+const validateInput = (input, typeValidate, cbInputEvent, cbTouched) => {
     let isTouched = false;
     let isValid = false;
     input.oninput = () => {
         const value = input.value;
         switch (typeValidate) {
-            case EMAIL:
-                isValid = isEmail(value);
+            case type_1.EMAIL:
+                isValid = (0, input_1.isEmail)(value);
                 break;
-            case PASSWORD:
-                isValid = isPassword(value);
+            case type_1.PASSWORD:
+                isValid = (0, input_1.isPassword)(value);
                 break;
-            case REQUIRED:
+            case type_1.REQUIRED:
             default:
-                isValid = isRequired(value);
+                isValid = (0, input_1.isRequired)(value);
         }
         cbInputEvent({
             isValid,
@@ -35,3 +38,4 @@ export const validateInput = (input, typeValidate, cbInputEvent, cbTouched) => {
         isTouched,
     };
 };
+exports.validateInput = validateInput;

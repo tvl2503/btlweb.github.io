@@ -10,6 +10,13 @@
     cursor: pointer;
     line-height: 24px;
     font-family: $font-family;
+    transition: all .3s ease-in-out;
+    &:hover {
+        transform: scale(1.05);
+    }
+    &[disabled] {
+        background: #ddd !important;
+    }
 }
 
 .btn-primary {

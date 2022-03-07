@@ -1,3 +1,6 @@
-export const EMAIL = 'email';
-export const PASSWORD = 'password';
-export const REQUIRED = 'required';
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.REQUIRED = exports.PASSWORD = exports.EMAIL = void 0;
+exports.EMAIL = 'email';
+exports.PASSWORD = 'password';
+exports.REQUIRED = 'required';

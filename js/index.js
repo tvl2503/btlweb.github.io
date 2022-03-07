@@ -23,12 +23,5 @@ import { insertStringElement, modelElement } from '../src/utils/element/utilsEle
     }
     navToggle.addEventListener('click', handleClick);
     navClose.addEventListener('click', handleClick);
-
-    const navLink = document.querySelectorAll('.nav__link');
-    function linkAction() {
-        const navMenu = document.getElementById('nav-menu');
-        navMenu.classList.remove('active');
-    }
-    navLink.forEach(n => n.addEventListener('click', linkAction));
 })();
 //# sourceMappingURL=index.js.map

@@ -3,6 +3,11 @@
   .items--header {
     color: $main-color;
     text-transform: capitalize;
+    @include tablet {
+      p {
+        font-size: 24px !important;
+      }
+    }
   }
   .content--select {
     position: relative;
@@ -13,9 +18,14 @@
       border-radius: 4px;
       cursor: pointer;
       min-width: 150px;
+      @include tablet {
+        p {
+          font-size: 20px !important;
+        }
+      }
     }
     i {
-      transition-delay: all 0.2s ease;
+      transition: all 0.2s ease;
     }
     ul {
       z-index: 2;
@@ -48,6 +58,11 @@
   }
 }
 .single--product {
+  transition: all 0.64s cubic-bezier(0.15, 0.75, 0.5, 1);
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
   .options--product {
     position: absolute;
     width: 100%;
@@ -61,6 +76,59 @@
       @include flex(center, center);
       background: $white;
       border-right: 1px solid #eee;
+      transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      cursor: pointer;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        @include translate(-50%, 0);
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid $black;
+        visibility: hidden;
+        transition: all .25s ease-in-out;
+        @include translate(-50%, -100%);
+        opacity: 0;
+      }
+      &::before {
+        content: attr(data-tooltip);
+        position: absolute;
+        top: -45px;
+        min-width: max-content;
+        @extend .f-12;
+        background: $black;
+        color: $white;
+        @include padding(6, 6);
+        border-radius: 4px;
+        @include translate(0, -20%);
+        visibility: hidden;
+        transition: all .25s ease-in-out;
+        opacity: 0;
+      }
+      i {
+        transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      &:hover {
+        background: $black;
+        &::after, &::before {
+          opacity: 1;
+          visibility: visible;
+        }
+        &::after {
+          @include translate(-50%, 0);
+        }
+        &::before {
+          @include translate(0, 0);
+        }
+        i {
+          color: $white;
+        }
+      }
       &:first-child {
         border-top-left-radius: 8px;
         border-bottom-left-radius: 8px;

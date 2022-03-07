@@ -727,7 +727,8 @@ img {
 }
 
 .container-form {
-  height: 100vh;
+  min-height: 100vh;
+  padding-bottom: 50px;
 }
 
 .container-form .title--form p {
@@ -1400,7 +1401,7 @@ img {
   gap: 10px;
 }
 
-.f-12 {
+.f-12, .single--product .options--product li::before {
   font-size: 12px;
 }
 
@@ -1615,6 +1616,17 @@ img {
   cursor: pointer;
   line-height: 24px;
   font-family: "Poppins", sans-serif;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.btn:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.btn[disabled] {
+  background: #ddd !important;
 }
 
 .btn-primary {
@@ -1686,6 +1698,7 @@ input {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .container--items {
@@ -1695,6 +1708,12 @@ input {
 .container--items .items--header {
   color: #666666;
   text-transform: capitalize;
+}
+
+@media only screen and (max-width: 991px) {
+  .container--items .items--header p {
+    font-size: 24px !important;
+  }
 }
 
 .container--items .content--select {
@@ -1710,9 +1729,15 @@ input {
   min-width: 150px;
 }
 
+@media only screen and (max-width: 991px) {
+  .container--items .content--select .select--content p {
+    font-size: 20px !important;
+  }
+}
+
 .container--items .content--select i {
-  -webkit-transition-delay: all 0.2s ease;
-          transition-delay: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .container--items .content--select ul {
@@ -1748,6 +1773,17 @@ input {
   pointer-events: visible;
 }
 
+.single--product {
+  -webkit-transition: all 0.64s cubic-bezier(0.15, 0.75, 0.5, 1);
+  transition: all 0.64s cubic-bezier(0.15, 0.75, 0.5, 1);
+}
+
+.single--product:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  cursor: pointer;
+}
+
 .single--product .options--product {
   position: absolute;
   width: 100%;
@@ -1772,6 +1808,77 @@ input {
           justify-content: center;
   background: #fff;
   border-right: 1px solid #eee;
+  -webkit-transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  position: relative;
+}
+
+.single--product .options--product li::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #000000;
+  visibility: hidden;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+  opacity: 0;
+}
+
+.single--product .options--product li::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -45px;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  background: #000000;
+  color: #fff;
+  padding: 6px 6px;
+  border-radius: 4px;
+  -webkit-transform: translate(0, -20%);
+          transform: translate(0, -20%);
+  visibility: hidden;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  opacity: 0;
+}
+
+.single--product .options--product li i {
+  -webkit-transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.single--product .options--product li:hover {
+  background: #000000;
+}
+
+.single--product .options--product li:hover::after, .single--product .options--product li:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.single--product .options--product li:hover::after {
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.single--product .options--product li:hover::before {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+.single--product .options--product li:hover i {
+  color: #fff;
 }
 
 .single--product .options--product li:first-child {
@@ -2095,5 +2202,57 @@ input {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
+}
+
+.text-uppercase, lowercase, capitalize, unset, none {
+  text-transform: uppercase;
+}
+
+.text-uppercase, lowercase, capitalize, unset, none {
+  text-transform: lowercase;
+}
+
+.text-uppercase, lowercase, capitalize, unset, none {
+  text-transform: capitalize;
+}
+
+.text-uppercase, lowercase, capitalize, unset, none {
+  text-transform: unset;
+}
+
+.text-uppercase, lowercase, capitalize, unset, none {
+  text-transform: none;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.text-line-through {
+  text-decoration: line-through;
+}
+
+.text-unset {
+  text-decoration: unset;
+}
+
+.text-none {
+  text-decoration: none;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
 }
 /*# sourceMappingURL=index.css.map */

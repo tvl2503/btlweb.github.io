@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="./boxicons-2.0.7/css/boxicons.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://kit-pro.fontawesome.com/releases/v5.12.0/css/pro.min.css"
+    />
+  </head>
+  <body>
+    <div id="navigation"></div>
+    <div class="container container--form pt-64">
+      <div class="title--form text-center pt-64 pb-64">
+        <p class="f-32">Log in</p>
+        <ul
+          class="d-flex justify-center align-center pt-32 f-14 breadcrumb--items title--breadcrumb"
+        >
+          <li>Home <i class="fal fa-angle-right"></i></li>
+          <li>Account</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container container--collection">
+      <div class="d-flex justify-between collection--layout">
+        <div class="side--bar">
+          <h4 class="f-28 pb-32">Filters</h4>
+          <div class="size--options pb-32">
+            <p class="f-18 pb-16 weight-500">Size</p>
+            <ul class="d-grid gap-12 grid--size">
+              <li>S</li>
+              <li>M</li>
+              <li>L</li>
+              <li>XL</li>
+            </ul>
+          </div>
+          <div class="range--prices">
+            <p class="f-18 pb-16 weight-500">Prices</p>
+            <div class="slider-container">
+              <div class="input--range">
+                <input id="range" type="range" min="1" max="10000" value="1" />
+                <span></span>
+              </div>
+              <p class="range--price pt-10 f-14">
+                Range: <span class="range--output"></span>
+              </p>
+            </div>
+          </div>
+          <div class="brands-line pt-32">
+            <p class="f-18 pb-16 weight-500">Brands</p>
+            <ul class="d-flex gap-10 flex-wrap align-center list--items">
+              <li>Retroline</li>
+              <li>Brook</li>
+            </ul>
+          </div>
+          <div class="brands-line pt-32">
+            <p class="f-18 pb-16 weight-500">Tags</p>
+            <ul class="d-flex gap-10 flex-wrap align-center list--items">
+              <li>Fashion</li>
+              <li>Hats</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid--products">
+          <div class="d-flex justify-between align-center header--row pointer">
+            <p class="d-flex justify-between align-center value--sort">
+              <span>Default</span> <i class="far fa-angle-down"></i>
+            </p>
+            <ul class="choose--sort"></ul>
+          </div>
+          <div class="pt-30 d-grid gap-30 products--grid">
+            <div class="single--product">
+                <div class="product--image">
+                    <img src="/images/static/26a_7595032c-21fd-4085-8731-21fbf37d3d8a_900x.webp" alt="">
+                    <div class="w-100 d-flex justify-center align-center option--button">
+                        <button class="btn btn-outlined">Select options</button>
+                    </div>
+                </div>
+                <div class="content--product pt-20">
+                    <a class="f-16 weight-500 d-block item--name" href="">Wool-blend jacket</a>
+                    <div class="d-flex">
+                        <p class="f-14">$33.00</p>
+                        <p class="discount--price">$35.00</p>
+                    </div>
+                </div>
+            </div> 
+            <div class="single--product">
+                <div class="product--image">
+                    <img src="/images/static/26a_7595032c-21fd-4085-8731-21fbf37d3d8a_900x.webp" alt="">
+                    <div class="w-100 d-flex justify-center align-center option--button">
+                        <button class="btn btn-outlined">Select options</button>
+                    </div>
+                </div>
+                <div class="content--product pt-20">
+                    <a class="f-16 weight-500 d-block item--name" href="">Wool-blend jacket</a>
+                    <div class="d-flex">
+                        <p class="f-14">$33.00</p>
+                        <p class="discount--price">$35.00</p>
+                    </div>
+                </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/dist/shop.js"></script>
+  </body>
+</html>

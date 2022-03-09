@@ -1,4 +1,5 @@
 $display: (flex, block, none, grid) !default;
+$width-percent: (.25, .5, .75, 1) !default;
 
 $property_flex: (
   start: flex-start,
@@ -12,6 +13,11 @@ $property_text: (start, center, end) !default;
 @each $d in $display {
   .d-#{$d} {
     display: $d;
+  }
+}
+@each $width in $width-percent {
+  .w-#{$width} {
+    width: percentage($width);
   }
 }
 
@@ -28,5 +34,8 @@ $property_text: (start, center, end) !default;
   .text-#{$text} {
     text-align: $text;
   }
+}
+.flex-wrap {
+  flex-wrap: wrap;
 }
 

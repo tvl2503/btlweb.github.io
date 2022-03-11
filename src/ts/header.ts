@@ -4,9 +4,9 @@ import {
   modelElement,
 } from "../utils/element/utilsElement";
 
-let firstScroll = 0;
-let currentScroll = 0;
 (function () {
+  let firstScroll = 0;
+  let currentScroll = 0;
   const deboundScrollHandler = () => {
     const header = document?.querySelector("#header");
     const offset = window.scrollY;
@@ -18,10 +18,12 @@ let currentScroll = 0;
     }
     firstScroll = currentScroll;
   };
-  window.addEventListener("scroll", deboundScrollHandler);
+  window.addEventListener("scroll", () => {
+    requestAnimationFrame(deboundScrollHandler);
+  });
 })();
 
-(function(){
+(function () {
   const button = document.querySelector(".btn-search");
   const header = document.querySelector(".container--search")!;
   const toggleHeader = () => {

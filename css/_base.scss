@@ -1,93 +1,117 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
-    user-select: none;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
-html{
-    font-size: 16px;
-    line-height: 24px;
+html {
+  font-size: 16px;
+  line-height: 24px;
 }
-body{
-    font-family: $font-family;
-    p, h1, h2, h3, h4, h5, h6, span, a {
-        line-height: 32px;
-    }
+body {
+  font-family: $font-family;
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  a {
+    line-height: 32px;
+  }
 }
-ul{
-    list-style: none;
+ul {
+  list-style: none;
 }
-a{
-    text-decoration: none;
-    color: unset;
+a {
+  text-decoration: none;
+  color: unset;
 }
 a:hover {
-    color: $main-color;
+  color: $main-color;
 }
 .pointer {
-    cursor: pointer;
+  cursor: pointer;
 }
 // a:hover{
 //     color: $main-color;
 //     font-weight: 800;
 // }
-img{
-    max-width: 100%;
+img {
+  max-width: 100%;
 }
 @each $color, $val in $colors {
-    .color-#{$color} {
-        color: $val;
-    }
+  .color-#{$color} {
+    color: $val;
+  }
 
-    .bg-#{$color} {
-        background-color: $val;
-    }
+  .bg-#{$color} {
+    background-color: $val;
+  }
 }
 
 @each $val in $numbers {
-    .grid-col-#{$val} {
-        grid-template-columns: repeat($val, 1fr);
-    }
+  .grid-col-#{$val} {
+    grid-template-columns: repeat($val, 1fr) !important;
+  }
 }
 
 @each $val in $numbers {
-    .grid-col-md-#{$val} {
-        @include tablet {
-            grid-template-columns: repeat($val, 1fr);
-        }
+  .grid-col-md-#{$val} {
+    @include tablet {
+      grid-template-columns: repeat($val, 1fr);
     }
+  }
 }
 
 @each $val in $numbers {
-    .grid-col-sm-#{$val} {
-        @include mobile {
-            grid-template-columns: repeat($val, 1fr);
-        }
+  .grid-col-sm-#{$val} {
+    @include mobile {
+      grid-template-columns: repeat($val, 1fr);
     }
+  }
 }
 @each $sd, $value in $shadow {
-    .shadow-#{$sd} {
-        box-shadow: $value;
-    }
+  .shadow-#{$sd} {
+    box-shadow: $value;
+  }
 }
 @each $w in $weight {
-    .weight-#{$w} {
-        font-weight: $w;
-    }
+  .weight-#{$w} {
+    font-weight: $w;
+  }
 }
-.container{
-    width: 100%;
-    max-width: $desktop-width;
-    padding: 0 15px;
-    margin: 0 auto;
+.container {
+  width: 100%;
+  max-width: $desktop-width;
+  padding: 0 15px;
+  margin: 0 auto;
 
-    @include tablet {
-        padding: 0 20px;
-    }
+  @include tablet {
+    padding: 0 20px;
+  }
 
-    @include mobile {
-        padding: 0 10px;
+  @include mobile {
+    padding: 0 10px;
+  }
+}
+
+.pagination {
+  li {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: $white;
+    @extend .shadow-sm;
+    @include flex(center, center);
+    transition: all .2s ease-in-out;
+    &:hover {
+      background: $black;
+      color: $white;
     }
+  }
 }

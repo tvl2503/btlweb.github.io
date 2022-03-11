@@ -11,9 +11,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const classList_1 = require("../utils/classList");
 const utilsElement_1 = require("../utils/element/utilsElement");
-let firstScroll = 0;
-let currentScroll = 0;
 (function () {
+    let firstScroll = 0;
+    let currentScroll = 0;
     const deboundScrollHandler = () => {
         const header = document === null || document === void 0 ? void 0 : document.querySelector("#header");
         const offset = window.scrollY;
@@ -26,7 +26,9 @@ let currentScroll = 0;
         }
         firstScroll = currentScroll;
     };
-    window.addEventListener("scroll", deboundScrollHandler);
+    window.addEventListener("scroll", () => {
+        requestAnimationFrame(deboundScrollHandler);
+    });
 })();
 (function () {
     const button = document.querySelector(".btn-search");

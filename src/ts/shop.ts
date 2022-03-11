@@ -3,8 +3,12 @@ import { ListQueryIndex } from "../models/shop";
 import { classListToggleElement } from "../utils/classList";
 import { insertStringElement } from "../utils/element/utilsElement";
 import { insertURLParams, removeUrlParameter } from "../utils/params";
+import DetectScreen from "../utils/resize";
 
 getHeader();
+
+const resizeScreenListener = new DetectScreen(991);
+let isMobile = resizeScreenListener.isMobile;
 
 (function () {
   const inputRange = document.getElementById("range") as HTMLInputElement;
@@ -83,4 +87,24 @@ getHeader();
   });
 })();
 
-
+(function () {
+  let icons = ["two-line", "three-line", "four-line"];
+  const listRender = document.querySelector(".list--style")!;
+  const listItems = document.querySelector('.products--grid')!;
+  const createElementString = icons.map(
+    (item, index) =>
+      `<li data-content="${
+        index + 2
+      } columns" data-render=${index + 2}><img src="../../images/icons/${item}.svg"/></li>`
+  );
+  insertStringElement(listRender, createElementString.join(""), "afterbegin");
+  
+  const li = listRender.querySelectorAll('li');
+  const handleOnClick = (target: HTMLLIElement) => {
+    const cols = target.getAttribute('data-render');
+    listItems.className = `pt-30 d-grid gap-16 products--grid grid-col-${cols}`
+  }
+  li.forEach(item => {
+    item.addEventListener('click', event => handleOnClick(item));
+  })
+})();

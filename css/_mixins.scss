@@ -24,7 +24,11 @@
         @content;
     }
 }
-
+@mixin md-tablet {
+    @media screen and (max-width: $desktop-width) {
+        @content;
+    }
+}
 @mixin padding($tb, $lf) {
     padding: #{$tb}px #{$lf}px;
 }

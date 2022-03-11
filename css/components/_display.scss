@@ -39,3 +39,6 @@ $property_text: (start, center, end) !default;
   flex-wrap: wrap;
 }
 
+.flex-column {
+  flex-direction: column;
+}

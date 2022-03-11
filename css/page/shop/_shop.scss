@@ -146,7 +146,7 @@ $sidebar: 320px;
       }
       color: $main-color;
     }
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     @include translate(0, 20%);
     opacity: 0;
     pointer-events: none;
@@ -162,8 +162,13 @@ $sidebar: 320px;
 }
 
 .products--grid {
+  .single--product {
+    &:hover {
+      transform: scale(1);
+    }
+  }
   grid-template-columns: repeat(4, 1fr);
-  @include tablet {
+  @include md-tablet {
     grid-template-columns: repeat(3, 1fr);
   }
   @include mobile {
@@ -175,16 +180,34 @@ $sidebar: 320px;
   .product--image {
     position: relative;
     height: 350px;
+    overflow: hidden;
     .option--button {
       position: absolute;
-      bottom: 15px;
+      bottom: -50px;
       width: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
+      pointer-events: none;
       button {
         background: $white;
         border: none;
         &:hover {
           transform: scale(1);
         }
+      }
+    }
+    &:hover {
+      .option--button {
+        visibility: visible;
+        bottom: 15px;
+        opacity: 1;
+        pointer-events: visible;
+      }
+      .list--icons {
+        opacity: 1;
+        pointer-events: visible;
+        @include translate(0, 0);
       }
     }
   }
@@ -197,12 +220,97 @@ $sidebar: 320px;
     object-fit: cover;
     @extend .shadow-sm;
     border-radius: 6px;
-    
   }
   .discount--price {
     text-decoration: line-through;
     @extend .f-14;
     padding-left: 10px;
     color: $main-color;
+  }
+}
+.list--style {
+  list-style: none;
+  @include flex(center, center);
+  @include tablet {
+    li {
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+  li {
+    width: 40px;
+    height: 40px;
+    @include flex(center, center);
+    background: #f2f2f2;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    position: relative;
+    &::before {
+      content: attr(data-content);
+      position: absolute;
+      width: max-content;
+      top: -50px;
+      @extend .f-12;
+      color: $white;
+      background: $black;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
+      @include padding(4, 4);
+      border-radius: 4px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: -18px;
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid $black;
+      transition: all .3s ease-in-out;
+      visibility: hidden;
+      opacity: 0;
+    }
+    &:hover {
+      &::before {
+        opacity: 1;
+        visibility: visible;
+        top: -40px;
+      }
+      &::after {
+        top: -8px;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+  img {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.list--icons {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  @include translate(150%, 0);
+  pointer-events: none;
+  opacity: 0;
+  transition: all .2s ease-in-out;
+  li {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    @include flex(center, center);
+    @extend .f-14;
+    background: $white;
+    transition: all .15s ease-in-out;
+    &:hover {
+      color: $white;
+      background: $black;
+    }
   }
 }

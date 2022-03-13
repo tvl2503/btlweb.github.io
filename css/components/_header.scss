@@ -267,3 +267,76 @@
 .reset--translate {
   @include translate(0, 0);
 }
+
+.cart--user {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100vh;
+  background: $white;
+  z-index: 101;
+  transition: all .4s ease-in-out;
+  @include translate(100%, 0);
+  h5 {
+    @include padding(20, 20);
+  }
+  .close--button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 32px;
+    height: 32px;
+  }
+  .items {
+    @include padding(20, 20);
+  }
+}
+.item--cart {
+  .image-cart {
+    width: 130px;
+    height: 150px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 4px
+    }
+  }
+  .content-cart {
+    a {
+      @include show-n-line(1);
+    }
+    .button--quantity {
+      width: 100px;
+      li {
+        min-height: 32px;
+        @include flex(center, center);
+        @extend .f-14;
+        background: #f1f1f1;
+        &:first-child {
+          border-top-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+        }
+        &:last-child {
+          border-top-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+        }
+      }
+    }
+  }
+}
+.total--checkout {
+  @include padding(20, 20);
+  button {
+    &:hover {
+      transform: scale(1);
+    }
+  }
+  background: #f7f7f7;
+  box-shadow: 0 0 10px #82828233;
+}
+
+.active-cart {
+  @include translate(0, 0);
+}

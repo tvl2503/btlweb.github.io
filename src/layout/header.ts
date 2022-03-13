@@ -58,10 +58,8 @@ export const getHeader = () => {
                 <i class="bx bx-star"></i>
               </a>
             </div>
-            <div class="header__menu__item header__menu__right__item">
-              <a href="/">
+            <div class="header__menu__item header__menu__right__item shopping--bag">
                 <i class="bx bx-shopping-bag"></i>
-              </a>
             </div>
           </div>
         </div>
@@ -94,9 +92,7 @@ export const getHeader = () => {
           </a>
         </li>
         <li>
-          <a href="/">
             <i class="bx bx-shopping-bag"></i>
-          </a>
         </li>
       </ul>
     </div>

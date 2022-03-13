@@ -1,6 +1,7 @@
 @import "./variable";
 @import "./mixins";
 @import "./base";
+@import './components/text';
 
 @import "./components/header";
 @import "./components/login";
@@ -9,5 +10,4 @@
 @import './components/button';
 @import './components/form';
 @import './page/index/index';
-@import './components/text';
 @import './page/shop/shop';

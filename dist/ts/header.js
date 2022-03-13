@@ -52,3 +52,32 @@ const utilsElement_1 = require("../utils/element/utilsElement");
         const { value } = event.target;
     }));
 })();
+(function () {
+    const bagShopping = document.querySelector('.shopping--bag');
+    const cartUser = document.querySelector('.cart--user');
+    const closeButton = cartUser.querySelector('.close--button');
+    const createModel = (0, utilsElement_1.modelElement)('cart-model');
+    const onHandleCart = () => {
+        const model = document.getElementById('cart-model');
+        const isActive = (0, classList_1.classListToggleElement)(cartUser, 'active-cart');
+        if (isActive) {
+            (0, utilsElement_1.insertStringElement)(document.body, createModel, 'afterbegin');
+            const modelElement = document.getElementById('cart-model');
+            modelElement === null || modelElement === void 0 ? void 0 : modelElement.addEventListener('click', onHandleCart);
+        }
+        else {
+            model === null || model === void 0 ? void 0 : model.remove();
+        }
+    };
+    bagShopping === null || bagShopping === void 0 ? void 0 : bagShopping.addEventListener('click', onHandleCart);
+    closeButton === null || closeButton === void 0 ? void 0 : closeButton.addEventListener('click', onHandleCart);
+})();
+(function (d) {
+    const cartUser = d.querySelector('.cart--user');
+    const headerCart = cartUser === null || cartUser === void 0 ? void 0 : cartUser.querySelector('h5');
+    const boxTotal = cartUser === null || cartUser === void 0 ? void 0 : cartUser.querySelector('.total--checkout');
+    const itemsCheckout = cartUser.querySelector('.items');
+    const getBoundingHeader = headerCart === null || headerCart === void 0 ? void 0 : headerCart.getBoundingClientRect();
+    const boxTotalBounding = boxTotal === null || boxTotal === void 0 ? void 0 : boxTotal.getBoundingClientRect();
+    itemsCheckout.style.height = `calc(100vh - ${getBoundingHeader.height + boxTotalBounding.height}px)`;
+})(document);

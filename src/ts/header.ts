@@ -48,3 +48,34 @@ import {
     const { value } = <HTMLInputElement>event.target;
   });
 })();
+
+(function(){
+  const bagShopping = document.querySelector('.shopping--bag');
+  const cartUser = document.querySelector('.cart--user')!;
+  const closeButton = cartUser.querySelector('.close--button');
+  const createModel = modelElement('cart-model');
+  const onHandleCart = () => {
+    const model = document.getElementById('cart-model');
+    const isActive = classListToggleElement(cartUser, 'active-cart');
+    if (isActive) {
+      insertStringElement(document.body, createModel, 'afterbegin');
+      const modelElement = document.getElementById('cart-model');
+      modelElement?.addEventListener('click', onHandleCart);
+    } else {
+      model?.remove();
+    }
+  }
+  bagShopping?.addEventListener('click', onHandleCart);
+  closeButton?.addEventListener('click', onHandleCart);
+})();
+
+(function(d){
+  const cartUser = d.querySelector('.cart--user')!;
+  const headerCart = cartUser?.querySelector('h5')!;
+  const boxTotal = cartUser?.querySelector('.total--checkout')! as HTMLElement;
+  const itemsCheckout = cartUser.querySelector('.items')! as HTMLElement;
+  const getBoundingHeader = headerCart?.getBoundingClientRect();
+  const boxTotalBounding = boxTotal?.getBoundingClientRect();
+
+  itemsCheckout.style.height = `calc(100vh - ${getBoundingHeader.height + boxTotalBounding.height}px)`;
+})(document);

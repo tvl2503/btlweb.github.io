@@ -1,5 +1,6 @@
 $display: (flex, block, none, grid) !default;
 $width-percent: (.25, .5, .75, 1) !default;
+$overflow: (hidden, visible, auto, scroll) !default;
 
 $property_flex: (
   start: flex-start,
@@ -9,6 +10,12 @@ $property_flex: (
 ) !default;
 
 $property_text: (start, center, end) !default;
+
+@each $var in $overflow {
+  .overflow-#{$var} {
+    overflow: $var;
+  }
+}
 
 @each $d in $display {
   .d-#{$d} {
@@ -41,4 +48,8 @@ $property_text: (start, center, end) !default;
 
 .flex-column {
   flex-direction: column;
+}
+
+.w-100 {
+  width: 100%;
 }

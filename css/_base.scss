@@ -56,7 +56,7 @@ img {
 
 @each $val in $numbers {
   .grid-col-#{$val} {
-    grid-template-columns: repeat($val, 1fr) !important;
+    grid-template-columns: repeat($val, 1fr);
   }
 }
 

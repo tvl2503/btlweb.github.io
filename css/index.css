@@ -110,48 +110,48 @@ img {
 }
 
 .grid-col-0 {
-  -ms-grid-columns: (1fr)[0] !important;
-      grid-template-columns: repeat(0, 1fr) !important;
+  -ms-grid-columns: (1fr)[0];
+      grid-template-columns: repeat(0, 1fr);
 }
 
 .grid-col-1 {
-  -ms-grid-columns: (1fr)[1] !important;
-      grid-template-columns: repeat(1, 1fr) !important;
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
 }
 
 .grid-col-2 {
-  -ms-grid-columns: (1fr)[2] !important;
-      grid-template-columns: repeat(2, 1fr) !important;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
 }
 
 .grid-col-3 {
-  -ms-grid-columns: (1fr)[3] !important;
-      grid-template-columns: repeat(3, 1fr) !important;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
 }
 
 .grid-col-4 {
-  -ms-grid-columns: (1fr)[4] !important;
-      grid-template-columns: repeat(4, 1fr) !important;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
 }
 
 .grid-col-5 {
-  -ms-grid-columns: (1fr)[5] !important;
-      grid-template-columns: repeat(5, 1fr) !important;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
 }
 
 .grid-col-6 {
-  -ms-grid-columns: (1fr)[6] !important;
-      grid-template-columns: repeat(6, 1fr) !important;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
 }
 
 .grid-col-7 {
-  -ms-grid-columns: (1fr)[7] !important;
-      grid-template-columns: repeat(7, 1fr) !important;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
 }
 
 .grid-col-8 {
-  -ms-grid-columns: (1fr)[8] !important;
-      grid-template-columns: repeat(8, 1fr) !important;
+  -ms-grid-columns: (1fr)[8];
+      grid-template-columns: repeat(8, 1fr);
 }
 
 @media only screen and (max-width: 991px) {
@@ -280,7 +280,7 @@ img {
   }
 }
 
-.shadow-sm, .pagination li, .container--items .content--select ul, .list--products .image--product img, .card--item img, .collection--layout .size--options .grid--size li:hover, .header--row .choose--sort, .products--grid img {
+.shadow-sm, .pagination li, .container--items .content--select ul, .list--products .image--product img, .card--item img, .collection--layout .size--options .grid--size li:hover, .header--row .choose--sort, .products--grid img, .swiper-main .swiper-btn-prev:hover, .swiper-main .swiper-btn-next:hover {
   -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
 }
@@ -815,6 +815,12 @@ img {
   transition: all .4s ease-in-out;
   -webkit-transform: translate(100%, 0);
           transform: translate(100%, 0);
+}
+
+@media only screen and (max-width: 768px) {
+  .cart--user {
+    width: 100%;
+  }
 }
 
 .cart--user h5 {
@@ -1616,22 +1622,22 @@ img {
 }
 
 .f-14, .item--cart .content-cart .button--quantity li, .error--message, .btn, input, input::-webkit-input-placeholder, .header--collections .swiper-button-prev::after,
-.header--collections .swiper-button-next::after, .brands-line, .header--row .choose--sort, .products--grid .discount--price, .list--icons li {
+.header--collections .swiper-button-next::after, .brands-line, .header--row .choose--sort, .products--grid .discount--price, .list--icons li, .swiper-main .swiper-btn-prev::after, .swiper-main .swiper-btn-next::after {
   font-size: 14px;
 }
 
 .f-14, .item--cart .content-cart .button--quantity li, .error--message, .btn, input, input:-ms-input-placeholder, .header--collections .swiper-button-prev::after,
-.header--collections .swiper-button-next::after, .brands-line, .header--row .choose--sort, .products--grid .discount--price, .list--icons li {
+.header--collections .swiper-button-next::after, .brands-line, .header--row .choose--sort, .products--grid .discount--price, .list--icons li, .swiper-main .swiper-btn-prev::after, .swiper-main .swiper-btn-next::after {
   font-size: 14px;
 }
 
 .f-14, .item--cart .content-cart .button--quantity li, .error--message, .btn, input, input::-ms-input-placeholder, .header--collections .swiper-button-prev::after,
-.header--collections .swiper-button-next::after, .brands-line, .header--row .choose--sort, .products--grid .discount--price, .list--icons li {
+.header--collections .swiper-button-next::after, .brands-line, .header--row .choose--sort, .products--grid .discount--price, .list--icons li, .swiper-main .swiper-btn-prev::after, .swiper-main .swiper-btn-next::after {
   font-size: 14px;
 }
 
 .f-14, .item--cart .content-cart .button--quantity li, .error--message, .btn, input, input::placeholder, .header--collections .swiper-button-prev::after,
-.header--collections .swiper-button-next::after, .brands-line, .header--row .choose--sort, .products--grid .discount--price, .list--icons li {
+.header--collections .swiper-button-next::after, .brands-line, .header--row .choose--sort, .products--grid .discount--price, .list--icons li, .swiper-main .swiper-btn-prev::after, .swiper-main .swiper-btn-next::after {
   font-size: 14px;
 }
 
@@ -2867,5 +2873,49 @@ input {
 .list--icons li:hover {
   color: #fff;
   background: #000000;
+}
+
+.container--main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container--swiper {
+  width: 50%;
+}
+
+.container--swiper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.swiper-main .swiper-btn-prev, .swiper-main .swiper-btn-next {
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+}
+
+.swiper-main .swiper-btn-prev::after, .swiper-main .swiper-btn-next::after {
+  color: #000000;
+}
+
+.swiper-main .swiper-btn-prev:hover, .swiper-main .swiper-btn-next:hover {
+  background: #000000;
+}
+
+.swiper-main .swiper-btn-prev:hover::after, .swiper-main .swiper-btn-next:hover::after {
+  color: #fff;
 }
 /*# sourceMappingURL=index.css.map */

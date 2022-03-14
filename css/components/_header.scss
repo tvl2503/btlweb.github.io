@@ -274,6 +274,9 @@
   top: 0;
   width: 50%;
   height: 100vh;
+  @include mobile {
+    width: 100%;
+  }
   background: $white;
   z-index: 101;
   transition: all .4s ease-in-out;

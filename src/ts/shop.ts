@@ -90,7 +90,7 @@ let isMobile = resizeScreenListener.isMobile;
 (function () {
   let icons = ["two-line", "three-line", "four-line"];
   const listRender = document.querySelector(".list--style")!;
-  const listItems = document.querySelector('.products--grid')!;
+  const listItems = document.querySelector('.products--grid')! as HTMLDivElement;
   const createElementString = icons.map(
     (item, index) =>
       `<li data-content="${
@@ -102,9 +102,27 @@ let isMobile = resizeScreenListener.isMobile;
   const li = listRender.querySelectorAll('li');
   const handleOnClick = (target: HTMLLIElement) => {
     const cols = target.getAttribute('data-render');
-    listItems.className = `pt-30 d-grid gap-16 products--grid grid-col-${cols}`
+    li.forEach(item => {
+      item.classList.remove('active--button');
+    })
+    target.classList.add('active--button');
+    listItems.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+    // listItems.className = `pt-30 d-grid gap-16 products--grid grid-col-${cols}`
   }
   li.forEach(item => {
     item.addEventListener('click', event => handleOnClick(item));
   })
+})();
+
+(function(){
+  
+  const eyes = document.querySelectorAll('.open--layout');
+  const modal = document.querySelector('.model--watch');
+  const onHandleModel = () => {
+    modal?.classList.toggle('model--watch-active');
+  }
+  eyes.forEach(element => {
+    element.addEventListener('click', onHandleModel);
+  })
+  modal?.addEventListener('click', onHandleModel);
 })();

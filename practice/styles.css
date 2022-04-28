@@ -1,0 +1,29 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container-value {
+  display: flex;
+  align-items: center;
+}
+
+.first, .second, .result {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.operator, .equal {
+  padding: 20px;
+}
+.counter {
+  padding-bottom: 20px;
+}
+.container-body {
+  display: none;
+}

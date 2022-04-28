@@ -4,7 +4,8 @@ const entries = {
     index: ['./src/ts/index.ts', './src/ts/header.ts', './js/index.js'],
     auth: ['./src/ts/login.ts', './src/ts/header.ts', './js/index.js'],
     shop: ['./src/ts/shop.ts', './src/ts/header.ts', './js/index.js'],
-    product: ['./src/ts/product.ts', './src/ts/header.ts', './js/index.js']
+    product: ['./src/ts/product.ts', './src/ts/header.ts', './js/index.js'],
+    payment: ['./src/ts/payment.ts', './src/ts/header.ts', './js/index.js']
 }
 
 

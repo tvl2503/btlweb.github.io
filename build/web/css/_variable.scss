@@ -1,0 +1,65 @@
+
+$header-height: 64px;
+$main-bg: #fff;
+$main-color: #666666;
+$font-family: 'Poppins', sans-serif;
+
+$txt-main-color: #000;
+
+$txt-second-color: #666666;
+$txt-white: #fff;
+$title-color: #000;
+$btn-main-bg: $main-bg;
+$btn-main-color: #000;
+$black: #000000;
+
+$header-tablet-height: 70px;
+$header-mobile-height: 40px;
+$header-shrink-height: 70px;
+
+@function shadow ($value) {
+    @return 0px 2px 8px rgba(0, 0, 0, $value);
+}
+
+$box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+$border: 1px solid #ddd;
+
+$mb-0-25: .25rem;
+$mb-0-5: .5rem;
+$mb-0-75: .75rem;
+$mb-1: 1rem;
+$mb-1-25: 1.25rem;
+$mb-1-5: 1.5rem;
+$mb-2: 2rem;
+$mb-2-5: 2.5rem;
+$shadow: (
+    sm: shadow(0.15),
+    md: shadow(0.18),
+    lg: shadow(0.2)
+)!default;
+
+$white: #fff;
+$colors: (
+    "blue": #4267b2,
+    "orange": #fbb96b,
+    "pink": #fe7e73,
+    "white": #fff,
+    "black": #000,
+    "main": $main-color,
+    "red": #ff0000,
+);
+
+$sm-mobile-width: 576px;
+$mobile-width: 768px;
+$tablet-width: 991px;
+$desktop-width: 1200px;
+
+$numbers: (0, 1, 2, 3, 4, 5, 6, 7, 8);
+$weight: (
+    500,
+    600,
+    700,
+    800,
+    900,
+    bold
+) !default;

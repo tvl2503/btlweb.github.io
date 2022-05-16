@@ -1,0 +1,26 @@
+input {
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    outline: none;
+    @extend .f-14;
+    &::placeholder {
+        @extend .f-14;
+    }
+    border-radius: 4px;
+}
+.form-group {
+    input {
+        width: 100%;
+    }
+    input[type='password'] {
+        padding-right: 40px;
+    }
+    position: relative;
+    i {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+}

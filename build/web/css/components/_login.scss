@@ -1,0 +1,58 @@
+.container-form{
+    min-height: 100vh;
+    padding-bottom: 50px;
+    .title--form {
+        p {
+            text-transform: capitalize;
+        }
+        ul {
+            list-style: none;
+            i {
+                margin: 0 16px;
+                font-size: 14px;
+            }
+        }
+    }
+}
+.container--login {
+    max-width: 928px;
+    margin: 0 auto;
+}
+.container--login {
+    h5 {
+        font-size: 24px;
+        font-weight: 600;
+        padding-bottom: 24px;
+    }
+    a{
+        text-decoration: underline !important;
+    }
+    .register--container {
+        p{
+            line-height: 32px;
+        }
+    }
+    button {
+        transition: all .3s ease-in-out;
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+    @include tablet {
+        display: block !important; 
+        .register--container {
+            padding-top: 50px;
+            p{
+                font-size: 14px;
+            }
+        }
+    }
+}
+.error--message {
+    @extend .f-14;
+    color: red;
+}
+
+.error--input {
+    border-color: red;
+}

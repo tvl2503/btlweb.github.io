@@ -24,6 +24,7 @@ public class ProductDAO extends DBContext{
              ResultSet rs = st.executeQuery();
              while(rs.next()){
                  Product p = new Product();
+                 p.setId(rs.getInt("id"));
                  p.setTitle(rs.getString("title"));
                  p.setDescription(rs.getString("description"));
                  p.setImage(rs.getString("image"));
@@ -32,6 +33,27 @@ public class ProductDAO extends DBContext{
                  list.add(p);
              }
              return list;
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+        return null;
+    }
+    public Product getProductByID(int id){
+        String sql = "select * from Products where id=?";
+        try{
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setInt(1, id);
+            ResultSet rs = st.executeQuery();
+            if(rs.next()){
+                Product c = new Product();
+                c.setId(rs.getInt("id"));
+                c.setTitle(rs.getString("title"));
+                c.setDescription(rs.getString("description"));
+                c.setImage(rs.getString("image"));
+                c.setPrice(rs.getFloat("price"));
+                c.setOldPrice(rs.getFloat("priceOld"));
+                return c;
+            }
         }catch(SQLException e){
             System.out.println(e);
         }

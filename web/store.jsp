@@ -150,7 +150,7 @@
                 <div
                   class="w-100 d-flex justify-center align-center option--button"
                 >
-                  <button class="btn btn-outlined">Select options</button>
+                        <a href ="/btl_web/product?id=<%=i.getId()%>" ><button class="btn btn-outlined">Chi tiết sản phẩm</button></a>
                 </div>
               </div>
               <div class="content--product pt-20">

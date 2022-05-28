@@ -4,6 +4,7 @@
     Author     : Linh Tran Vo
 --%>
 
+<%@page import="model.Product"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -36,85 +37,30 @@
         </ul>
       </div>
     </div>
+    <%
+        if(request.getAttribute("product")!= null){
+            Product p = (Product)request.getAttribute("product");
+        
+        
+    %>
 
     <div class="container container--main">
       <div class="w-100 container--swiper">
         <div class="swiper swiper-main">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+              <img src="<%=p.getImage()%>" />
             </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-            </div>
-          </div>
-          <div class="swiper-button-next swiper-btn-next"></div>
-          <div class="swiper-button-prev swiper-btn-prev"></div>
-        </div>
-        <div thumbsSlider="" class="swiper swiper-list">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-            </div>
+            
           </div>
         </div>
+     
       </div>
       <div class="product">
         <div class="product__icon"><i class="bx bx-star"></i></div>
-        <h1 class="product__title">Trainers Shoes</h1>
-        <span class="product__price">$14.00</span>
-        <del class="product__priceG">$17.00</del>
+        <h1 class="product__title"><%=p.getTitle()%></h1>
+        <span class="product__price"><%=p.getPrice()%></span>
+        <del class="product__priceG"><%=p.getOldPrice()%></del>
         <p class="product__quantity">Quantity</p>
         <div class="product__num">
           <button id ="jsSub" class="product__sunNum" onclick ="tru()">-</button>
@@ -145,6 +91,9 @@
         </div>
       </div>
       </div>
+    <%
+        }
+    %>
     </div>
      <jsp:include page = "./component/footer.jsp" />
     <script>

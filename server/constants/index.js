@@ -1,0 +1,11 @@
+const KEY_MULTER = 'file_upload';
+const CLOUD_NAME = 'CLOUD_NAME';
+const CLOUD_API_KEY = 'CLOUD_API_KEY';
+const CLOUD_API_SECRET_KEY = 'CLOUD_API_SECRET_KEY';
+
+module.exports = {
+  KEY_MULTER,
+  CLOUD_NAME,
+  CLOUD_API_KEY,
+  CLOUD_API_SECRET_KEY
+};

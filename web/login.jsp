@@ -17,6 +17,12 @@
     />
     </head>
     <body>
+        
+        <%
+            if(session.getAttribute("account") != null){
+                response.sendRedirect("/btl_web");
+            }
+        %>
         <div id="navigation">
              <jsp:include page = "./component/header.jsp" />
         </div>
@@ -64,11 +70,12 @@
             Sign up for early Sale access plus tailored new arrivals, trends and
             promotions. To opt out, click unsubscribe in our emails.
           </p>
-          <a href="#"><button class="btn btn-black">Register</button></a>
+          <a href="/btl_web/register.jsp"><button class="btn btn-black">Register</button></a>
         </div>
       </div>
     </div>
        <jsp:include page = "./component/footer.jsp" />
+
     <script src="./dist/auth.js"></script>
     </body>
 </html>

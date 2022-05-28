@@ -15,7 +15,7 @@ import model.User;
  */
 public class UserDAO extends DBContext {
     public User check(String username, String password){
-        String sql = "select * from customer where username=? and password=?";
+        String sql = "select * from Users where email=? and password=?";
         try{
             PreparedStatement st = connection.prepareStatement(sql);
             st.setString(1, username);
@@ -33,15 +33,17 @@ public class UserDAO extends DBContext {
          
         return null;
     }
-    public User registerUser(String username, String password){
-        String sql = "insert into customer values(username=? and password=?)";
+    public User registerUser(String fisrtName, String lastName,String email, String password){
+        String sql = "insert into Users(first_name, last_name, email, password) values(?, ? , ?, ?)";
+        System.out.println(fisrtName + " " + lastName + " " + email + " " + password);
         try{
             PreparedStatement st = connection.prepareStatement(sql);
-            st.setString(1, username);
-            st.setString(2, password);
-            ResultSet rs = st.executeQuery();
-            
-            User ad = new User(username, password);
+            st.setString(1, fisrtName);
+            st.setString(2, lastName);
+            st.setString(3, email);
+            st.setString(4, password);
+            st.executeUpdate();
+            User ad = new User(email, password);
             System.out.println(ad);
             
             return ad;        

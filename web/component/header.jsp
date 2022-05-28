@@ -32,9 +32,9 @@
                   <i class="fal fa-angle-left"></i>
                 </div>
                 <%
-                    String[] arr = {"Trang chủ", "Cửa hàng", "Sản phẩm", "Giới thiệu"};   
-                    String[] path = {"/", "/store", "/product","/about-us"};
-                    for(int i = 0; i< 4; i++){
+                    String[] arr = {"Trang chủ", "Cửa hàng",  "Giới thiệu"};   
+                    String[] path = {"/", "/store","/about-us"};
+                    for(int i = 0; i< 3; i++){
                         String title = arr[i];
                         String pathh = path[i];
                  %>     
@@ -58,28 +58,42 @@
             </div>
           </a>
           <div class="header__menu__right">
-            <div
+              <div
               class="header__menu__item header__menu__right__item btn-search"
             >
              <i class="fal fa-search"></i>
             </div>
+              <%
+                  if(session.getAttribute("account") != null){
+                       %>
+                       
 
             <div
               class="header__menu__item header__menu__right__item user--option"
             >
               <a href="/btl_web/login.jsp"> <i class="fal fa-user"></i></a>
             </div>
-            <div
-              class="header__menu__item header__menu__right__item favourite--option"
-            >
-              <a href="/">
-                  <i class="fal fa-star"></i>
-              </a>
-            </div>
+
             <div class="header__menu__item header__menu__right__item shopping--bag">
                 <i class="fal fa-shopping-bag"></i>
             </div>
           </div>
+                       <%
+                  }
+              %>
+              <% 
+                  if(session.getAttribute("account") == null){
+                       %> 
+                       <div
+              class="header__menu__item header__menu__right__item user--option"
+            >
+              <a href="/btl_web/login.jsp"> Đăng nhập</i></a>
+            </div>
+            
+                <%   
+                }
+              %>
+            
         </div>
       </div>
     </header>

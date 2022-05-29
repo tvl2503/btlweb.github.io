@@ -78,6 +78,7 @@ const genTemplateImage = (src: string, id: string) => {
 };
 
 const uploadGenerateLinkImage = async (file: File, idTemplate: string) => {
+  const urlInput = document.getElementById('url') as HTMLInputElement;
   const templateId = document.getElementById(idTemplate) as HTMLDivElement;
   const imageMatchId = templateId.querySelector('img') as HTMLImageElement;
   const response = await uploadImage(file);
@@ -90,6 +91,7 @@ const uploadGenerateLinkImage = async (file: File, idTemplate: string) => {
   const loadingSpinner = templateId.querySelector('.loading-spinner');
   loadingSpinner?.remove();
   setImageUrl(url);
+  urlInput.value = url;
 };
 
 const onUploadImage = () => {

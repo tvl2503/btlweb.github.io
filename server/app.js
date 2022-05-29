@@ -25,13 +25,13 @@ const configMulter = multer.diskStorage({
   }
 })
 
+app.use(useCorsController);
+
 app.use(multer({
   storage: configMulter
 }).array(KEY_MULTER));
 
 configCloudinary();
-
-app.use(useCorsController);
 
 app.use('/api/upload', uploadRouter);
 

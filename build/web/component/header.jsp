@@ -3,6 +3,8 @@
     Created on : May 11, 2022, 9:17:42 AM
     Author     : Linh Tran Vo
 --%>
+<%@page import="fe.NavBar"%>
+<%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -32,11 +34,13 @@
                   <i class="fal fa-angle-left"></i>
                 </div>
                 <%
-                    String[] arr = {"Trang chủ", "Cửa hàng",  "Giới thiệu"};   
-                    String[] path = {"/", "/store","/about-us"};
-                    for(int i = 0; i< 3; i++){
-                        String title = arr[i];
-                        String pathh = path[i];
+                    List<NavBar> list = new ArrayList<>();
+                    list.add(new NavBar("Trang chủ", "/"));
+                    list.add(new NavBar("Cửa hàng", "/store"));
+                    list.add(new NavBar("Giới thiệu", "/about-us"));
+                    for(NavBar i: list){
+                        String title = i.getName();
+                        String pathh = i.getPath();
                  %>     
                  <div class="header__menu__item header__menu__left__item">
                     <a href="/btl_web<%=pathh%>" class="nav__link"><%=title%></a>
@@ -111,8 +115,11 @@
         <img src="<%=request.getContextPath() %>/images/static/logo_dark.png" />
       </div>
       <div class="input--search">
-        <input type="text" placeholder="Search Products" />
-        <i class="bx bx-search"></i>
+        <form>
+            <input type="text" name = "q" placeholder="Search Products" />
+            <i class="fal fa-search"></i>
+
+        </form>
       </div>
       <ul class="d-flex right--options">
         <li>
@@ -163,6 +170,5 @@
         <button class="btn btn-black w-100">Check out</button>
       </div>
     </div>
-    <script src="../dist/index.js"></script>
     </body>
 </html>

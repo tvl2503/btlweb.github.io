@@ -59,44 +59,6 @@
     </div>
     <div class="container container--collection">
       <div class="d-flex justify-between pb-48 collection--layout">
-        <div class="side--bar">
-          <h4 class="f-28 pb-32">Filters</h4>
-          <div class="size--options pb-32">
-            <p class="f-18 pb-16 weight-500">Size</p>
-            <ul class="d-grid gap-12 grid--size">
-              <li>S</li>
-              <li>M</li>
-              <li>L</li>
-              <li>XL</li>
-            </ul>
-          </div>
-          <div class="range--prices">
-            <p class="f-18 pb-16 weight-500">Prices</p>
-            <div class="slider-container">
-              <div class="input--range">
-                <input id="range" type="range" min="1" max="10000" value="1" />
-                <span></span>
-              </div>
-              <p class="range--price pt-10 f-14">
-                Range: <span class="range--output"></span>
-              </p>
-            </div>
-          </div>
-          <div class="brands-line pt-32">
-            <p class="f-18 pb-16 weight-500">Brands</p>
-            <ul class="d-flex gap-10 flex-wrap align-center list--items">
-              <li>Retroline</li>
-              <li>Brook</li>
-            </ul>
-          </div>
-          <div class="brands-line pt-32">
-            <p class="f-18 pb-16 weight-500">Tags</p>
-            <ul class="d-flex gap-10 flex-wrap align-center list--items">
-              <li>Fashion</li>
-              <li>Hats</li>
-            </ul>
-          </div>
-        </div>
         <div class="grid--products">
           <div class="d-flex justify-between align-center">
             <div
@@ -110,38 +72,12 @@
             <ul class="gap-16 list--style"></ul>
           </div>
           <div class="pt-30 d-grid gap-16 products--grid">
-<!--            <div class="single--product">
-              <div class="product--image">
-                <img
-                  src="./images/static/26a_7595032c-21fd-4085-8731-21fbf37d3d8a_900x.webp"
-                  alt=""
-                />
-                <div
-                  class="w-100 d-flex justify-center align-center option--button"
-                >
-                  <button class="btn btn-outlined">Select options</button>
-                </div>
-                <ul class="d-flex flex-column gap-16 list--icons">
-                  <li><i class="far fa-star"></i></li>
-                  <li class="open--layout"><i class="far fa-eye"></i></li>
-                </ul>
-              </div>
-              <div class="content--product pt-20">
-                <a class="f-16 weight-500 d-block item--name" href=""
-                  >Wool-blend jacket</a
-                >
-                <div class="d-flex">
-                  <p class="f-14">$33.00</p>
-                  <p class="discount--price">$35.00</p>
-                </div>
-              </div>
-            </div>-->
             <%
                 List<Product> list = (List<Product>)request.getAttribute("data");
                 if(list != null)
                 for(Product i: list){
                 %>
-                <div class="single--product">
+              <div class="single--product">
               <div class="product--image">
                 <img
                   src="<%=i.getImage()%>"
@@ -163,15 +99,17 @@
                 </div>
               </div>
             </div>
-          </div>
-
+                
             <%
                 }
             %>
+          </div>
+
             
         </div>
       </div>
     </div>
+    <jsp:include page = "./component/footer.jsp" />
     <script src="./dist/shop.js"></script>
     </body>
 </html>

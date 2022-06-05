@@ -59,4 +59,30 @@ public class ProductDAO extends DBContext{
         }
         return null;
     }
+    
+    public Product createProduct(String title, String description, Float price, String imageURL, Float oldPrice) {
+        String sql = "INSERT INTO Products (title, description, price, image, oldPrice) VALUES (?, ?, ?, ?, ?)";
+        try{
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setString(0, title);
+            st.setString(1, description);
+            st.setFloat(2, price);
+            st.setString(3, imageURL);
+            st.setFloat(4, oldPrice);
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                Product product = new Product();
+                product.setId(rs.getInt("id"));
+                product.setImage(rs.getString("image"));
+                product.setOldPrice(rs.getFloat("oldPrice"));
+                product.setPrice(rs.getFloat("price"));
+                product.setTitle(rs.getString("title"));
+                product.setDescription(rs.getString("description"));
+                return product;
+            }
+        }catch(SQLException error) {
+            return null;
+        }
+        return null;
+    }
 }

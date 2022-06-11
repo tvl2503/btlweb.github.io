@@ -85,4 +85,48 @@ public class ProductDAO extends DBContext{
         }
         return null;
     }
+    public List<Product> getNewProduct(){
+        List<Product> res = new ArrayList<>();
+        String query = "select * from Products limit 8";
+         try{
+             PreparedStatement st = connection.prepareStatement(query);
+             ResultSet rs = st.executeQuery();
+             while(rs.next()){
+                 Product p = new Product();
+                 p.setId(rs.getInt("id"));
+                 p.setTitle(rs.getString("title"));
+                 p.setDescription(rs.getString("description"));
+                 p.setImage(rs.getString("image"));
+                 p.setPrice(rs.getFloat("price"));
+                 p.setOldPrice(rs.getFloat("priceOld"));
+                 res.add(p);
+             }
+             return res;
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+         return null;
+    }
+    public List<Product> getBestSellProduct(){
+        List<Product> res = new ArrayList<>();
+        String query = "select * from Products where id > 3 limit 8";
+         try{
+             PreparedStatement st = connection.prepareStatement(query);
+             ResultSet rs = st.executeQuery();
+             while(rs.next()){
+                 Product p = new Product();
+                 p.setId(rs.getInt("id"));
+                 p.setTitle(rs.getString("title"));
+                 p.setDescription(rs.getString("description"));
+                 p.setImage(rs.getString("image"));
+                 p.setPrice(rs.getFloat("price"));
+                 p.setOldPrice(rs.getFloat("priceOld"));
+                 res.add(p);
+             }
+             return res;
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+         return null;
+    }
 }

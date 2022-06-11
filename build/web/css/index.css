@@ -3477,7 +3477,7 @@ input {
   font-weight: 700;
 }
 
-.container {
+.cart .container {
   max-width: 1200px;
   width: 80%;
   margin: 0 auto;

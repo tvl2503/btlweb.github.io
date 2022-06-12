@@ -1,30 +1,10 @@
 import { v4 } from "uuid";
-import { getHeader } from "../layout/header";
 import { convertImageToURL } from "../utils/image";
 import { uploadImage } from "../service/upload";
+import { useState } from "../utils/state";
+import { gid, qs } from "../utils/query";
 
-const boxUpload = document.querySelector(".box-upload")!;
-
-type UseStateGetValue<T> = () => T;
-
-type UseStateSetValue<T> = (newState: T) => void;
-
-const useState = <T>(
-  defaultValue: T
-): [UseStateGetValue<T>, UseStateSetValue<T>] => {
-  let value = defaultValue;
-
-  const setValue = (newValue: T) => {
-    value = newValue;
-  };
-  const getValue = (): T => {
-    return value as T;
-  };
-
-  return [getValue, setValue];
-};
-
-getHeader();
+const boxUpload = qs(".box-upload")!;
 
 const [getImageURL, setImageUrl] = useState<string | null>(null);
 
@@ -32,11 +12,11 @@ const [getImageURL, setImageUrl] = useState<string | null>(null);
   const [getTitle, setTitle] = useState("");
   const [getDescription, setDescription] = useState("");
   const [getPrice, setPrice] = useState("");
-  const inputTitle = document.getElementById("title");
-  const inputDescription = document.getElementById("description");
-  const inputPrice = document.getElementById("price");
-  const btnSubmit = document.querySelector('.btn-submit');
-  const form = document.querySelector('form');
+  const inputTitle = gid("title");
+  const inputDescription = gid("description");
+  const inputPrice = gid("price");
+  const btnSubmit = qs('.btn-submit');
+  const form = qs('form') as HTMLFormElement;
 
   inputTitle?.addEventListener("input", (event: Event) => {
     const { value } = event.target as HTMLInputElement;

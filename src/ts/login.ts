@@ -6,9 +6,6 @@ import {
 } from "../utils/classList";
 import { insertStringElement } from "../utils/element/utilsElement";
 import { validateInput } from "../utils/validator/validateInput";
-import { getHeader } from "../layout/header";
-
-getHeader();
 
 const elements: Array<InputValidate> = [];
 (function () {

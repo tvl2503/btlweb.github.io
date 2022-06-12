@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -17,7 +17,7 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 body p,
@@ -1898,7 +1898,7 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
   outline: none;
   cursor: pointer;
   line-height: 24px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Open Sans", sans-serif;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
@@ -3349,5 +3349,98 @@ input[type="file"] {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
+}
+
+.body {
+  padding-top: 64px;
+}
+
+.search-title {
+  padding: 64px 0;
+}
+
+.description-title {
+  padding-top: 12px;
+}
+
+.description-title i {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.single-product-search {
+  position: relative;
+}
+
+.image-single-product {
+  padding-top: 100%;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.image-single-product img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.image-single-product:hover img {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.image-single-product:hover .btn-add-container {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.description-single-product {
+  padding-top: 8px;
+}
+
+.description-single-product p {
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 991px) {
+  .grid-container {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .grid-container {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .grid-container {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.btn-add-container {
+  position: absolute;
+  padding: 12px;
+  bottom: 0;
+  width: 100%;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+.btn-add-container button {
+  min-width: 144px;
 }
 /*# sourceMappingURL=index.css.map */

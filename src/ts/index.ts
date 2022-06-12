@@ -1,9 +1,6 @@
-import { getHeader } from "../layout/header";
 import Swiper, { Navigation, Pagination } from "swiper";
 import { insertStringElement } from "../utils/element/utilsElement";
 import { classListToggleElement } from "../utils/classList";
-
-getHeader();
 
 new Swiper(".swiper--container", {
   pagination: {

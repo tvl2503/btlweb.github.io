@@ -1,7 +1,6 @@
-import Swiper from "swiper";
-import { getHeader } from "../layout/header";
-
-getHeader();
+import Swiper, { Navigation } from "swiper";
+import { qs } from "../utils/query";
+import { useState } from "../utils/state";
 
 (function () {
   const swiperProduct = new Swiper(".swiper-list", {
@@ -11,6 +10,7 @@ getHeader();
     watchSlidesProgress: true,
     loop: true,
     pagination: true,
+    modules: [Navigation]
   });
   const swiperList = new Swiper(".swiper-main", {
     spaceBetween: 10,
@@ -22,5 +22,37 @@ getHeader();
     thumbs: {
       swiper: swiperProduct,
     },
+    modules: [Navigation]
   });
+})();
+
+
+(function(){
+  const [quantity, setQuantity] = useState<number>(1);
+  const btnDecrement = qs('#jsSub');
+  const btnIncrement = qs('#jsPlus');
+  const quantityProduct = qs('#jsNum');
+
+  const quantityIsValid = () => {
+    return quantity() > 1;
+  }
+  const setTextContent = () => {
+    quantityProduct!.textContent = quantity().toString();
+  }
+  const onIncrement = () => {
+    setQuantity(quantity() + 1);
+    setTextContent();
+  }
+
+  const onDecrement = () => {
+    if (!quantityIsValid()) {
+      return;
+    }
+    setQuantity(quantity() - 1);
+    setTextContent();
+  }
+
+  btnDecrement?.addEventListener('click', onDecrement);
+
+  btnIncrement?.addEventListener('click', onIncrement);
 })();

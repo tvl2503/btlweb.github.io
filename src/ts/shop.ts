@@ -1,11 +1,8 @@
-import { getHeader } from "../layout/header";
 import { ListQueryIndex } from "../models/shop";
 import { classListToggleElement } from "../utils/classList";
 import { insertStringElement } from "../utils/element/utilsElement";
 import { insertURLParams, removeUrlParameter } from "../utils/params";
 import DetectScreen from "../utils/resize";
-
-getHeader();
 
 const resizeScreenListener = new DetectScreen(991);
 let isMobile = resizeScreenListener.isMobile;

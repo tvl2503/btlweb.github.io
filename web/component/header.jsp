@@ -79,7 +79,7 @@
                         </div>
 
                         <div class="header__menu__item header__menu__right__item shopping--bag">
-                            <i class="fal fa-shopping-bag"></i>
+                            <a href="/btl_web/cart.jsp"> <i class="fal fa-shopping-bag"></i></a>
                         </div>
                     </div>
                     <%
@@ -131,44 +131,11 @@
                     </a>
                 </li>
                 <li>
-                    <i class="fal fa-shopping-bag"></i>
+                    <a href="/btl_web/cart.jsp"> <i class="fal fa-shopping-bag"></i></a>
+                   
                 </li>
             </ul>
         </div>
-        <div class="cart--user shadow-sm">
-            <div class="d-flex justify-center align-center close--button pointer">
-                <i class="f-24 fal fa-times"></i>
-            </div>
-            <h5 class="f-18 weight-500 pb-16">Shopping Cart</h5>
-            <div class="d-grid grid-col-1 gap-16 overflow-scroll items">
-                <div class="d-flex item--cart">
-                    <div class="image-cart pr-16">
-                        <img
-                            src="<%=request.getContextPath()%>/images/static/logo_dark.png"
-                            alt=""
-                            />
-                    </div>
-                    <div class="content-cart">
-                        <a class="f-14" href="">Quilted Shoulder Bag</a>
-                        <p class="f-14 pb-10 price--item">$22.00</p>
-                        <div class="d-flex align-center">
-                            <ul class="d-grid grid-col-3 align-center text-center pointer button--quantity">
-                                <li>-</li>
-                                <li>50</li>
-                                <li>+</li>
-                            </ul>
-                            <span class="f-12 pl-12 remove-item">Remove</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="total--checkout">
-                <div class="d-flex justify-between align-center f-14 pb-10">
-                    <p>Subtotal</p>
-                    <p>$66.00</p>
-                </div>
-                <button class="btn btn-black w-100">Check out</button>
-            </div>
-        </div>
+
     </body>
 </html>

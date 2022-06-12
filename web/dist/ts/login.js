@@ -4,8 +4,6 @@ const type_1 = require("../constants/type");
 const classList_1 = require("../utils/classList");
 const utilsElement_1 = require("../utils/element/utilsElement");
 const validateInput_1 = require("../utils/validator/validateInput");
-const header_1 = require("../layout/header");
-(0, header_1.getHeader)();
 const elements = [];
 (function () {
     const input = document.querySelectorAll("input");

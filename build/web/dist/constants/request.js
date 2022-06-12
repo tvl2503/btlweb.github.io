@@ -1,8 +1,4 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UPLOAD_KEY = exports.REQUIRED = exports.PASSWORD = exports.EMAIL = void 0;
-exports.EMAIL = 'email';
-exports.PASSWORD = 'password';
-exports.REQUIRED = 'required';
-exports.UPLOAD_KEY = 'file_upload';
-
+exports.BASE_URL = void 0;
+exports.BASE_URL = 'http://localhost:9000';

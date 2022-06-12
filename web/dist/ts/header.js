@@ -9,13 +9,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const path_1 = require("../constants/path");
 const classList_1 = require("../utils/classList");
 const utilsElement_1 = require("../utils/element/utilsElement");
+const query_1 = require("../utils/query");
 (function () {
     let firstScroll = 0;
     let currentScroll = 0;
     const deboundScrollHandler = () => {
-        const header = document === null || document === void 0 ? void 0 : document.querySelector("#header");
+        const header = (0, query_1.qs)('#header');
         const offset = window.scrollY;
         currentScroll = offset;
         if (currentScroll > firstScroll) {
@@ -31,38 +33,49 @@ const utilsElement_1 = require("../utils/element/utilsElement");
     });
 })();
 (function () {
-    const button = document.querySelector(".btn-search");
-    const header = document.querySelector(".container--search");
+    const button = (0, query_1.qs)('.btn-search');
+    const header = (0, query_1.qs)(".container--search");
+    const input = (0, query_1.qs)("input", header);
     const toggleHeader = () => {
         const searchFieldIsOpen = (0, classList_1.classListToggleElement)(header, "reset--translate");
         const overlayElement = (0, utilsElement_1.modelElement)("overlay--search");
         if (searchFieldIsOpen) {
             (0, utilsElement_1.insertStringElement)(document.body, overlayElement, "afterbegin");
-            const overlaySearch = document === null || document === void 0 ? void 0 : document.querySelector("#overlay--search");
+            const overlaySearch = (0, query_1.qs)("#overlay--search");
             overlaySearch === null || overlaySearch === void 0 ? void 0 : overlaySearch.addEventListener("click", toggleHeader);
         }
         else {
-            const searchOverlay = document === null || document === void 0 ? void 0 : document.querySelector("#overlay--search");
+            input.value = '';
+            const queryParams = new URLSearchParams(window.location.search);
+            queryParams.delete('q');
+            window.history.pushState({
+                path: path_1.ROOT_PATH
+            }, '', path_1.ROOT_PATH);
+            const searchOverlay = (0, query_1.qs)("#overlay--search");
             searchOverlay === null || searchOverlay === void 0 ? void 0 : searchOverlay.remove();
         }
     };
     button === null || button === void 0 ? void 0 : button.addEventListener("click", toggleHeader);
-    const input = header === null || header === void 0 ? void 0 : header.querySelector("input");
     input === null || input === void 0 ? void 0 : input.addEventListener("input", (event) => __awaiter(this, void 0, void 0, function* () {
-        const { value } = event.target;
+        const value = event.target.value;
+        const { location, history } = window;
+        const url = path_1.ROOT_PATH + '?q=' + value;
+        history.pushState({
+            path: url
+        }, '', url);
     }));
 })();
 (function () {
-    const bagShopping = document.querySelector('.shopping--bag');
-    const cartUser = document.querySelector('.cart--user');
-    const closeButton = cartUser.querySelector('.close--button');
+    const bagShopping = (0, query_1.qs)('.shopping--bag');
+    const cartUser = (0, query_1.qs)('.cart--user');
+    const closeButton = (0, query_1.qs)('.close--button', cartUser);
     const createModel = (0, utilsElement_1.modelElement)('cart-model');
     const onHandleCart = () => {
-        const model = document.getElementById('cart-model');
+        const model = (0, query_1.gid)('cart-model');
         const isActive = (0, classList_1.classListToggleElement)(cartUser, 'active-cart');
         if (isActive) {
             (0, utilsElement_1.insertStringElement)(document.body, createModel, 'afterbegin');
-            const modelElement = document.getElementById('cart-model');
+            const modelElement = (0, query_1.gid)('cart-model');
             modelElement === null || modelElement === void 0 ? void 0 : modelElement.addEventListener('click', onHandleCart);
         }
         else {
@@ -73,10 +86,10 @@ const utilsElement_1 = require("../utils/element/utilsElement");
     closeButton === null || closeButton === void 0 ? void 0 : closeButton.addEventListener('click', onHandleCart);
 })();
 (function (d) {
-    const cartUser = d.querySelector('.cart--user');
-    const headerCart = cartUser === null || cartUser === void 0 ? void 0 : cartUser.querySelector('h5');
-    const boxTotal = cartUser === null || cartUser === void 0 ? void 0 : cartUser.querySelector('.total--checkout');
-    const itemsCheckout = cartUser.querySelector('.items');
+    const cartUser = (0, query_1.qs)('.cart--user');
+    const headerCart = (0, query_1.qs)('h5', cartUser);
+    const boxTotal = (0, query_1.qs)('.total--checkout', cartUser);
+    const itemsCheckout = (0, query_1.qs)('.items', cartUser);
     const getBoundingHeader = headerCart === null || headerCart === void 0 ? void 0 : headerCart.getBoundingClientRect();
     const boxTotalBounding = boxTotal === null || boxTotal === void 0 ? void 0 : boxTotal.getBoundingClientRect();
     itemsCheckout.style.height = `calc(100vh - ${getBoundingHeader.height + boxTotalBounding.height}px)`;

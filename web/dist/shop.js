@@ -177,19 +177,19 @@ const params_1 = __webpack_require__(/*! ../utils/params */ "./src/utils/params.
 const resize_1 = __importDefault(__webpack_require__(/*! ../utils/resize */ "./src/utils/resize.ts"));
 const resizeScreenListener = new resize_1.default(991);
 let isMobile = resizeScreenListener.isMobile;
-(function () {
-    const inputRange = document.getElementById("range");
-    const priceOutput = document.querySelector(".range--output");
-    // const lineMark = document.querySelector('.input--range span') as HTMLSpanElement;
-    priceOutput.textContent = `${inputRange.value}$ - ${inputRange.max}$`;
-    // lineMark.style.width = `${((+inputRange.value - 10) / +inputRange.max) * 100}%`;
-    const onChangeInput = (event) => {
-        const value = event.target.value;
-        priceOutput.textContent = `${value}$ - ${inputRange.max}$`;
-        // lineMark.style.width = `${((+inputRange.value - 10) / +inputRange.max) * 100}%`;
-    };
-    inputRange === null || inputRange === void 0 ? void 0 : inputRange.addEventListener("input", onChangeInput);
-})();
+//(function () {
+//    const inputRange = document.getElementById("range");
+//    const priceOutput = document.querySelector(".range--output");
+//    // const lineMark = document.querySelector('.input--range span') as HTMLSpanElement;
+//    priceOutput.textContent = `${inputRange.value}$ - ${inputRange.max}$`;
+//    // lineMark.style.width = `${((+inputRange.value - 10) / +inputRange.max) * 100}%`;
+//    const onChangeInput = (event) => {
+//        const value = event.target.value;
+//        priceOutput.textContent = `${value}$ - ${inputRange.max}$`;
+//        // lineMark.style.width = `${((+inputRange.value - 10) / +inputRange.max) * 100}%`;
+//    };
+//    inputRange === null || inputRange === void 0 ? void 0 : inputRange.addEventListener("input", onChangeInput);
+//})();
 (function () {
     const list = [
         {

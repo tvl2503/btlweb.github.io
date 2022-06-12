@@ -171,5 +171,4 @@
             </div>
         </div>
     </body>
-    <script src="../dist/ts/header.js"></script>
 </html>

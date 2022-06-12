@@ -7,19 +7,19 @@ import DetectScreen from "../utils/resize";
 const resizeScreenListener = new DetectScreen(991);
 let isMobile = resizeScreenListener.isMobile;
 
-(function () {
-  const inputRange = document.getElementById("range") as HTMLInputElement;
-  const priceOutput = document.querySelector(".range--output")!;
-  // const lineMark = document.querySelector('.input--range span') as HTMLSpanElement;
-  priceOutput.textContent = `${inputRange.value}$ - ${inputRange.max}$`;
-  // lineMark.style.width = `${((+inputRange.value - 10) / +inputRange.max) * 100}%`;
-  const onChangeInput = (event: Event) => {
-    const value = (<HTMLInputElement>event.target).value;
-    priceOutput.textContent = `${value}$ - ${inputRange.max}$`;
-    // lineMark.style.width = `${((+inputRange.value - 10) / +inputRange.max) * 100}%`;
-  };
-  inputRange?.addEventListener("input", onChangeInput);
-})();
+// (function () {
+//   const inputRange = document.getElementById("range") as HTMLInputElement;
+//   const priceOutput = document.querySelector(".range--output")!;
+//   // const lineMark = document.querySelector('.input--range span') as HTMLSpanElement;
+//   priceOutput.textContent = `${inputRange.value}$ - ${inputRange.max}$`;
+//   // lineMark.style.width = `${((+inputRange.value - 10) / +inputRange.max) * 100}%`;
+//   const onChangeInput = (event: Event) => {
+//     const value = (<HTMLInputElement>event.target).value;
+//     priceOutput.textContent = `${value}$ - ${inputRange.max}$`;
+//     // lineMark.style.width = `${((+inputRange.value - 10) / +inputRange.max) * 100}%`;
+//   };
+//   inputRange?.addEventListener("input", onChangeInput);
+// })();
 
 (function () {
   const list: Array<ListQueryIndex> = [

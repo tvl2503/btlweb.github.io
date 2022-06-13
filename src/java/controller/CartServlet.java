@@ -4,21 +4,23 @@
  */
 package controller;
 
-import dal.UserDAO;
+import dal.CartDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import model.Cart;
 import model.User;
 
 /**
  *
  * @author Linh Tran Vo
  */
-public class LoginServlet extends HttpServlet {
+public class CartServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +39,10 @@ public class LoginServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginServlet</title>");            
+            out.println("<title>Servlet CartServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet CartServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -58,7 +60,13 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        HttpSession session = request.getSession();
+        User ad = (User)session.getAttribute("account");
+        CartDAO cd = new CartDAO();
+        List<Cart> list =  cd.getCart(ad.getId());
+        System.out.println(ad.getId());
+        request.setAttribute("data", list);
+        request.getRequestDispatcher("cart.jsp").forward(request, response);
     }
 
     /**
@@ -72,20 +80,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String user = request.getParameter("username");
-        String pass = request.getParameter("password");
-        UserDAO d = new UserDAO();
-        User ad = d.check(user, pass);
-        if(ad == null){
-            request.setAttribute("error", "Tk or MK không đúng!!");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
-        }
-        else{
-            HttpSession session = request.getSession();
-            session.setAttribute("account", ad);
-            session.setAttribute("username", ad.getUsername());
-            response.sendRedirect("index");
-        }
+        processRequest(request, response);
     }
 
     /**

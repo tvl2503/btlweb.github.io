@@ -9,6 +9,7 @@ package model;
  * @author Linh Tran Vo
  */
 public class User {
+    private int id;
     private String username, password;
 
     public User() {
@@ -19,6 +20,12 @@ public class User {
         this.password = password;
     }
 
+    public User(int id, String username, String password) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+    }
+    
     public String getUsername() {
         return username;
     }
@@ -33,6 +40,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
     

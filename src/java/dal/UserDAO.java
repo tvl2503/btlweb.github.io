@@ -23,8 +23,7 @@ public class UserDAO extends DBContext {
             ResultSet rs = st.executeQuery();
             
             if(rs.next()){
-                User ad = new User(username, password);
-                System.out.println(ad);
+                User ad = new User(rs.getInt("id"), username, password);
                 return ad;        
             }
         }catch(SQLException e){

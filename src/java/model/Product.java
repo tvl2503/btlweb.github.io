@@ -24,6 +24,12 @@ public class Product {
         this.price = price;
         this.oldPrice = oldPrice;
     }
+    public Product(int id, String title, String image, float price) {
+        this.id = id;
+        this.title = title;
+        this.image = image;
+        this.price = price;
+    }
 
     public int getId() {
         return id;

@@ -4,6 +4,8 @@
     Author     : Linh Tran Vo
 --%>
 
+<%@page import="model.Cart"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -35,31 +37,38 @@
                     <div class="cart__quantity">Quantity</div>
                     <div class="cart__total">Total</div>
                 </div>
+                <%
+                    List<Cart> list = (List<Cart>)request.getAttribute("data");
+                    if(list != null){
+                     for(Cart i: list){
+                    
+                %>
                 <div class="cart__body">
                     <div class="cart__item-product">
                         <div class="cart__product-img">
-                            <img src="https://cdn.shopify.com/s/files/1/0595/7291/2305/products/40_c5a79318-cbbf-4f96-a1cf-5eef0009e9f5_180x.jpg?v=1629630711" alt=""/>
+                            <img src="<%=i.getProduct().getImage()%>" alt=""/>
                         </div>
                         <div class="cart__product-info">
                             <div class="cart__product-title"><a href="#">
-                                    Trainers Shoes
+                                    <%=i.getProduct().getTitle()%>
                                 </a></div>
                             <p><span>Color</span>:Gray</p>
                             <button>Remove</button>
                         </div>
                     </div>
                     <div class="cart__item-price">
-                        <p>$14.00</p>
+                        <p><%=i.getProduct().getPrice()%></p>
                     </div>
                     <div class="cart__item-quantity">
                         <button id ="jsSub" class="cart__sunNum" onclick ="tru()">-</button>
-                        <span class="cart__numPr" id ="jsNum">1</span>
+                        <span class="cart__numPr" id ="jsNum"><%=i.getQuantity()%></span>
                         <button id="jsPlus" class="cart__plusNum" onclick ="plus()">+</button>
                     </div>
                     <div class="cart__item-total">
-                        <p>$14.00</p>
+                        <p><%=i.getProduct().getPrice()*i.getQuantity()%></p>
                     </div>
                 </div>
+                <%}}%>
                 <div class="cart__checkout">
                     <div class="cart__checkout__subtotal">
                       <span>Tổng tiền</span>

@@ -115,9 +115,12 @@
                 <img src="<%=request.getContextPath()%>/images/static/logo_dark.png" />
             </div>
             <div class="input--search">
-                <form>
-                    <input type="text" name = "q" placeholder="Search Products" />
-                    <i class="fal fa-search"></i>
+                <form method="GET" action = "search">
+                        <input type="text" name = "key" placeholder="Search Products" />
+                    <button type ="submit">
+                        <i class="fal fa-search"></i> 
+                    </button>
+                   
 
                 </form>
             </div>

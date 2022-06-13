@@ -129,4 +129,27 @@ public class ProductDAO extends DBContext{
         }
          return null;
     }
+    public List<Product> SearchByName(String key){
+        List<Product> list = new ArrayList<>();
+        String sql = "Select * from Products where title like ?";
+        try{
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setString(1, "%" + key + "%");
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                Product p = new Product();
+                 p.setId(rs.getInt("id"));
+                 p.setTitle(rs.getString("title"));
+                 p.setDescription(rs.getString("description"));
+                 p.setImage(rs.getString("image"));
+                 p.setPrice(rs.getFloat("price"));
+                 p.setOldPrice(rs.getFloat("priceOld"));
+                 list.add(p);
+            }
+            return list;
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+        return null;
+    } 
 }

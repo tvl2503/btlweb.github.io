@@ -62,11 +62,16 @@ public class CartServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         User ad = (User)session.getAttribute("account");
+        if(ad!=null){
         CartDAO cd = new CartDAO();
         List<Cart> list =  cd.getCart(ad.getId());
-        System.out.println(ad.getId());
+        System.out.println("user "+ad.getId());
         request.setAttribute("data", list);
         request.getRequestDispatcher("cart.jsp").forward(request, response);
+        }
+        else{
+             response.sendRedirect("login.jsp");
+        }
     }
 
     /**

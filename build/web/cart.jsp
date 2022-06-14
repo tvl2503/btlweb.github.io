@@ -38,10 +38,10 @@
                     <div class="cart__total">Total</div>
                 </div>
                 <%
-                    List<Cart> list = (List<Cart>)request.getAttribute("data");
-                    if(list != null){
-                     for(Cart i: list){
-                    
+                    List<Cart> list = (List<Cart>) request.getAttribute("data");
+                    if (list != null) {
+                        for (Cart i : list) {
+
                 %>
                 <div class="cart__body">
                     <div class="cart__item-product">
@@ -65,42 +65,43 @@
                         <button id="jsPlus" class="cart__plusNum" onclick ="plus()">+</button>
                     </div>
                     <div class="cart__item-total">
-                        <p><%=i.getProduct().getPrice()*i.getQuantity()%></p>
+                        <p><%=i.getProduct().getPrice() * i.getQuantity()%></p>
                     </div>
                 </div>
-                <%}}%>
+                <%}
+                    }%>
                 <div class="cart__checkout">
                     <div class="cart__checkout__subtotal">
-                      <span>Tổng tiền</span>
-                      <span>$14.00</span>
+                        <span>Tổng tiền</span>
+                        <span>$14.00</span>
                     </div>
                     <div class="cart__checkout__btn">
-                      <button>Thanh toán</button>
+                        <button>Thanh toán</button>
                     </div>
-                  </div>
                 </div>
             </div>
         </div>
-        <jsp:include page = "./component/footer.jsp" />
-        <script>
-            const tru = () => {
-                let input = document.getElementById("jsNum");
-                let num = Number.parseInt(input.innerText);
-                if (num < 2) {
-                    input.textContent = 1;
-                } else {
-                    input.textContent = num - 1;
-                }
+    </div>
+    <jsp:include page = "./component/footer.jsp" />
+    <script>
+        const tru = () => {
+            let input = document.getElementById("jsNum");
+            let num = Number.parseInt(input.innerText);
+            if (num < 2) {
+                input.textContent = 1;
+            } else {
+                input.textContent = num - 1;
+            }
 
-                num--;
-            };
+            num--;
+        };
 
-            const plus = () => {
-                let input = document.getElementById("jsNum");
-                let num = Number.parseInt(input.innerText);
-                input.textContent = num + 1;
-                num++;
-            };
-        </script>
-    </body>
+        const plus = () => {
+            let input = document.getElementById("jsNum");
+            let num = Number.parseInt(input.innerText);
+            input.textContent = num + 1;
+            num++;
+        };
+    </script>
+</body>
 </html>

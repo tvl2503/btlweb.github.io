@@ -79,7 +79,7 @@
                         </div>
 
                         <div class="header__menu__item header__menu__right__item shopping--bag">
-                            <a href="/btl_web/cart.jsp"> <i class="fal fa-shopping-bag"></i></a>
+                            <a href="/btl_web/cart"> <i class="fal fa-shopping-bag"></i></a>
                         </div>
                     </div>
                     <%
@@ -134,7 +134,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/btl_web/cart.jsp"> <i class="fal fa-shopping-bag"></i></a>
+                    <a href="/btl_web/cart"> <i class="fal fa-shopping-bag"></i></a>
                    
                 </li>
             </ul>

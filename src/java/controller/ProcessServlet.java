@@ -95,7 +95,13 @@ public class ProcessServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+             HttpSession session = request.getSession();
+             User currentUser = (User) session.getAttribute("account");
+            CartDAO cd = new CartDAO();
+            String idremove = request.getParameter("id_remove");
+            int id = Integer.parseInt(idremove);
+            cd.deleteProductById(id, currentUser.getId());
+            response.sendRedirect("cart");
     }
 
     /**

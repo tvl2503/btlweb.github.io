@@ -78,5 +78,16 @@ public class CartDAO extends DBContext {
         }
         
     }
+      public void deleteProductById( int idProduct, int idUser ){
+        String sql = " delete from Carts where id_Product = ? and id_user = ?;";
+        try{
+             PreparedStatement st = connection.prepareStatement(sql);
+             st.setInt(1, idProduct);
+             st.setInt(2, idUser);
+             st.executeUpdate();
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+    }
      
 }

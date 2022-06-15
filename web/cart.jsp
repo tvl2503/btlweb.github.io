@@ -38,6 +38,7 @@
                     <div class="cart__total">Total</div>
                 </div>
                 <%
+                    int total = 0;
                     List<Cart> list = (List<Cart>) request.getAttribute("data");
                     if (list != null) {
                         for (Cart i : list) {
@@ -53,7 +54,10 @@
                                     <%=i.getProduct().getTitle()%>
                                 </a></div>
                             <p><span>Color</span>:Gray</p>
-                            <button>Remove</button>
+                            <form action="process" method="post">
+                                <input type="hidden" name ="id_remove" value ="<%=i.getProduct().getId()%>"/>
+                                <button><input type="submit" value = "Remove"/></button>
+                            </form>
                         </div>
                     </div>
                     <div class="cart__item-price">
@@ -66,6 +70,7 @@
                     </div>
                     <div class="cart__item-total">
                         <p><%=i.getProduct().getPrice() * i.getQuantity()%></p>
+                        <% total +=  i.getProduct().getPrice() * i.getQuantity();%>
                     </div>
                 </div>
                 <%}
@@ -73,7 +78,7 @@
                 <div class="cart__checkout">
                     <div class="cart__checkout__subtotal">
                         <span>Tổng tiền</span>
-                        <span>$14.00</span>
+                        <span><%=total%></span>
                     </div>
                     <div class="cart__checkout__btn">
                         <button>Thanh toán</button>

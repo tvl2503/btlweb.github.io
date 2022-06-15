@@ -44,6 +44,10 @@
         <servlet-name>CartServlet</servlet-name>
         <servlet-class>controller.CartServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProcessServlet</servlet-name>
+        <servlet-class>controller.ProcessServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -79,6 +83,10 @@
     <servlet-mapping>
         <servlet-name>CartServlet</servlet-name>
         <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcessServlet</servlet-name>
+        <url-pattern>/process</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

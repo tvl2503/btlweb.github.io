@@ -56,7 +56,7 @@
                             <a><button class="btn btn-outlined">Register</button></a>
                         </div>
                     </div>
-                    <a class="d-flex justify-center align-center h-100" href="/">
+                    <a class="d-flex justify-center align-center h-100" href="/btl_web/index">
                         <div class="header__logo">
                             <img src="<%=request.getContextPath()%>/images/static/logo_dark.png" />
                         </div>

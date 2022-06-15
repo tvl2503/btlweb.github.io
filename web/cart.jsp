@@ -49,7 +49,7 @@
                             <img src="<%=i.getProduct().getImage()%>" alt=""/>
                         </div>
                         <div class="cart__product-info">
-                            <div class="cart__product-title"><a href="#">
+                            <div class="cart__product-title"><a href="/btl_web/product?id=<%=i.getProduct().getId()%>">
                                     <%=i.getProduct().getTitle()%>
                                 </a></div>
                             <p><span>Color</span>:Gray</p>
@@ -60,9 +60,9 @@
                         <p><%=i.getProduct().getPrice()%></p>
                     </div>
                     <div class="cart__item-quantity">
-                        <button id ="jsSub" class="cart__sunNum" onclick ="tru()">-</button>
+                        <button id ="jsSub" class="cart__sunNum" onclick ="tru()"><a href="process?num=-1&id=<%= i.getProduct().getId()%>"> -</a></button>
                         <span class="cart__numPr" id ="jsNum"><%=i.getQuantity()%></span>
-                        <button id="jsPlus" class="cart__plusNum" onclick ="plus()">+</button>
+                        <button id="jsPlus" class="cart__plusNum" onclick ="plus()"><a href="process?num=1&id=<%= i.getProduct().getId()%>"> +</a></button>
                     </div>
                     <div class="cart__item-total">
                         <p><%=i.getProduct().getPrice() * i.getQuantity()%></p>

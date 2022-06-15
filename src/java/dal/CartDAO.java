@@ -42,4 +42,41 @@ public class CartDAO extends DBContext {
         }
         return null;
     }
+     public Cart getProductById(int idProduct, int idUser){
+        String sql = "select * from products inner join Carts on Carts.id_product = Products.id  where Carts.id_user = ? and Products.id = ?";
+        try{
+             PreparedStatement st = connection.prepareStatement(sql);
+             st.setInt(1, idProduct);
+             st.setInt(2, idUser);
+             ResultSet rs = st.executeQuery();
+              Cart c = new Cart();
+             if(rs.next()){
+                 Product p = new Product();
+                 p.setId(rs.getInt("id"));
+                 p.setTitle(rs.getString("title"));
+                 p.setImage(rs.getString("image"));
+                 p.setPrice(rs.getFloat("price"));
+                 c.setProduct(p);
+                 c.setQuantity(rs.getInt("quantity"));
+             }
+             return c;
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+        return null;
+    }
+      public void updateProductById(int quantity, int idProduct, int idUser ){
+        String sql = "update Carts set quantity = ? where id_Product = ? and id_user = ?;";
+        try{
+             PreparedStatement st = connection.prepareStatement(sql);
+             st.setInt(1, quantity);
+             st.setInt(2, idProduct);
+             st.setInt(3, idUser);
+             st.executeUpdate();
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+        
+    }
+     
 }

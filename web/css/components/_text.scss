@@ -1,0 +1,32 @@
+$text: (left, center, right, justify) !default;
+$transform: (
+    uppercase, lowercase, capitalize, unset, none
+) !default;
+$decoration: (
+    underline, line-through, unset, none
+)!default;
+
+@each $var in $transform {
+    .text-#{$transform} {
+        text-transform: #{$var};
+    }
+}
+@each $var in $decoration {
+    .text-#{$var} {
+        text-decoration: #{$var};
+    }
+}
+@each $var in $text {
+  .text-#{$var} {
+    text-align: #{$var};
+  }
+}
+
+@mixin show-n-line($row) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $row;
+  line-clamp: $row;
+  -webkit-box-orient: vertical;
+}

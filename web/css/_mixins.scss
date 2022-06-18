@@ -1,0 +1,34 @@
+@mixin flex($align-item, $justify-content) {
+    display: flex;
+    align-items: $align-item;
+    justify-content: $justify-content;
+}
+
+@mixin translate($translateX, $translateY) {
+    transform: translate($translateX, $translateY);
+}
+
+@mixin mobile {
+    @media only screen and (max-width: $mobile-width) {
+        @content;
+    }
+}
+
+@mixin sm-mobile {
+    @media only screen and (max-width: $sm-mobile-width) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media only screen and (max-width: $tablet-width) {
+        @content;
+    }
+}
+@mixin md-tablet {
+    @media screen and (max-width: $desktop-width) {
+        @content;
+    }
+}
+@mixin padding($tb, $lf) {
+    padding: #{$tb}px #{$lf}px;
+}

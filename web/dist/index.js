@@ -222,7 +222,7 @@ new swiper_1.default(".swiper--collection", {
     autoplay: {
         delay: 5000,
     },
-    loop: true,
+    loop: false,
     breakpoints: {
         200: {
             slidesPerView: "auto",

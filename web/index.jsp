@@ -248,7 +248,7 @@
                     </div>
                     <div class="pt-20 data--product">
                         <a class="pb-4 f-14" href="/btl_web/product?id=<%=p.getId()%>"><%= p.getTitle()%></a>
-                        <p class="f-14"><%= p.getPrice()%> đ</p>
+                        <p class="f-14 price-product"><%= p.getPrice()%></p>
                     </div>
                 </div>
                 <%

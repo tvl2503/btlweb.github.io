@@ -68,19 +68,8 @@ public class ProcessServlet extends HttpServlet {
             System.out.println("num "+ num_raw);
             String id_raw = request.getParameter("id");
             int id = Integer.parseInt(id_raw);
-            int num = 0;
-            Cart c = cd.getProductById(id,currentUser.getId());
-            int numStore = c.getQuantity();
-            num = Integer.parseInt(num_raw);
-            if(num == -1 && numStore > 1){
-                numStore -= 1;
-                c.setQuantity(numStore);
-            }else{
-                numStore +=1;
-                c.setQuantity(numStore);
-            }
-            System.out.println("quantity" + c.getQuantity());
-            cd.updateProductById(c.getQuantity(), id, currentUser.getId());
+            int num = Integer.parseInt(num_raw);
+            cd.updateProductById(num, id, currentUser.getId());
             response.sendRedirect("cart");
     }
 

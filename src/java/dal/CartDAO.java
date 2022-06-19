@@ -96,13 +96,29 @@ public class CartDAO extends DBContext {
         }
     }
       public void updateProductById(int quantity, int idProduct, int idUser ){
-        String sql = "update Carts set quantity = ? where id_Product = ? and id_user = ?;";
+        String sql = "select * from carts where id_Product = ? and id_User = ?";
+         System.out.println(quantity + " " + " " + idProduct + " " + idProduct);
         try{
              PreparedStatement st = connection.prepareStatement(sql);
-             st.setInt(1, quantity);
-             st.setInt(2, idProduct);
-             st.setInt(3, idUser);
-             st.executeUpdate();
+             st.setInt(1, idProduct);
+             st.setInt(2, idUser);
+             ResultSet rs = st.executeQuery();
+             if(rs.next()){
+                
+                int sl = rs.getInt("quantity");
+                if(sl == 1 && quantity == -1){
+                    deleteProductById(idProduct, idUser);
+                }
+                else{
+                    sql = "update Carts set quantity = ? where id_Product = ? and id_user = ?;";
+                    st = connection.prepareStatement(sql);
+                    st.setInt(1, sl + quantity);
+                    st.setInt(2, idProduct);
+                    st.setInt(3, idUser);
+                    st.executeUpdate();
+                }
+                
+             }
         }catch(SQLException e){
             System.out.println(e);
         }

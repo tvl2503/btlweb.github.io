@@ -66,7 +66,7 @@
         <div class="product__num">
             <input type ="text" style ="display: none;"  name="idProduct" value ="<%=p.getId()%>" />
             <button type ="button" id ="jsSub" class="product__sunNum" onclick ="tru()">-</button>
-            <input  type ="text"  id ="jsNum" value ="1" name ="quantity" />
+            <input  type ="number"  id ="jsNum" value ="1" name ="quantity" />
             <button type ="button" id="jsPlus" class="product__plusNum" onclick ="plus()">+</button>  
           
         </div>

@@ -75,7 +75,7 @@
                         <div
                             class="header__menu__item header__menu__right__item user--option"
                             >
-                            <a href="/btl_web/login.jsp"> <i class="fal fa-user"></i></a>
+                            <a href="/btl_web/logout"> <i class="fal fa-user"></i></a>
                         </div>
 
                         <div class="header__menu__item header__menu__right__item shopping--bag">

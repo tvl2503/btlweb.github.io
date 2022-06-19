@@ -50,11 +50,18 @@
                             }
                         %>     
 
+                        <% 
+                        if (session.getAttribute("account") == null) {
+                        %>
+
                         <div class="text-center d-grid grid-col-1 gap-16 auth-options">
-                            <p class="f-18 weight-600">My Account</p>
-                            <a href="/btl_web/login.jsp"><button class="btn btn-black">Log in</button></a>
-                            <a><button class="btn btn-outlined">Register</button></a>
+                            <p class="f-18 weight-600">Tài khoản</p>
+                            <a href="/btl_web/login.jsp"><button class="btn btn-black">Đăng nhập</button></a>
+                            <a><button class="btn btn-outlined">Đăng ký</button></a>
                         </div>
+                        <% 
+                          }
+                        %>
                     </div>
                     <a class="d-flex justify-center align-center h-100" href="/btl_web/index">
                         <div class="header__logo">
@@ -65,7 +72,10 @@
                         <div
                             class="header__menu__item header__menu__right__item btn-search"
                             >
+                            <span class="tooltip">
                             <i class="fal fa-search"></i>
+                            <span>Tìm kiếm</span>
+                            </span>
                         </div>
                         <%
                             if (session.getAttribute("account") != null) {
@@ -75,11 +85,17 @@
                         <div
                             class="header__menu__item header__menu__right__item user--option"
                             >
-                            <a href="/btl_web/login.jsp"> <i class="fal fa-user"></i></a>
+                            <a class="tooltip" href="/btl_web/login.jsp"> 
+                              <i class="fal fa-user"></i>
+                              <span>Đăng xuất</span>
+                            </a>
                         </div>
 
                         <div class="header__menu__item header__menu__right__item shopping--bag">
-                            <a href="/btl_web/cart"> <i class="fal fa-shopping-bag"></i></a>
+                            <a class="tooltip" href="/btl_web/cart"> 
+                              <i class="fal fa-shopping-bag"></i>
+                              <span>Giỏ hàng</span>
+                            </a>
                         </div>
                     </div>
                     <%

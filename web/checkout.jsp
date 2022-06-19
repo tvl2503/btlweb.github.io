@@ -1,42 +1,42 @@
-<%-- 
-    Document   : checkout
-    Created on : Jun 19, 2022, 7:21:06 AM
-    Author     : Linh Tran Vo
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%-- Document : checkout Created on : Jun 19, 2022, 7:21:06 AM Author : Linh
+Tran Vo --%> <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-        <link rel="stylesheet" href="./css/page/checkout.css">
-        <link rel="stylesheet" href="./css/index.css">
-    </head>
-    <body>
-         <jsp:include page = "./component/header.jsp" />
-        <div class="content">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>JSP Page</title>
+    <link rel="stylesheet" href="./css/page/checkout.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <jsp:include page="./component/header.jsp" />
+    <div class="content layout--top">
       <div class="content-left">
-        <h3>New Minimog</h3>
-        <p class="header-content">Contact information</p>
+        <h3>Thanh toán đơn hàng</h3>
+        <p class="header-content">Thông tin liên lạc</p>
         <input
           type="text"
-          placeholder="Email or mobile phone number"
+          placeholder="Email hoặc số điện thoại"
           class="input-one"
+          id="info-user"
         />
-        <p class="header-content">Shipping address</p>
-        <div class="name">
-          <input type="text" placeholder="First name" class="input-two" />
-          <input type="text" placeholder="Last name" class="input-two" />
+        <p class="header-content">Thông tin giao hàng</p>
+        <div class="name d-block">
+          <input
+            id="username"
+            type="text"
+            placeholder="Name..."
+            class="input-two w-100"
+          />
         </div>
-        <input type="text" placeholder="Address" class="input-one" />
         <input
           type="text"
-          placeholder="Apartment, suite, etc. (optional)"
+          id="address"
+          placeholder="Địa chỉ..."
           class="input-one"
         />
-        <input type="text" placeholder="City" class="input-one" />
-        <button>Submit checkout</button>
+        <input type="text" placeholder="Lưu ý..." class="input-one" />
+        <button type="submit" class="submit-checkout">Submit checkout</button>
       </div>
       <div class="content-right">
         <div class="item">
@@ -51,17 +51,17 @@
               <p>Black</p>
             </div>
           </div>
-          <p class="item-right">$13.00</p>
+          <p class="item-right">500000</p>
         </div>
         <hr />
-        <div class="row">
+        <!-- <div class="row">
           <input type="text" placeholder="Discount code" class="discount" />
           <button>Apply</button>
         </div>
-        <hr />
+        <hr /> -->
         <div class="row">
           <p>Subtotal</p>
-          <p>$13.00</p>
+          <p class="subtotal">500000</p>
         </div>
         <div class="row">
           <p>Shipping</p>
@@ -70,10 +70,11 @@
         <hr />
         <div class="row">
           <p>Total</p>
-          <p class="total-price">$13.00 USD</p>
+          <p class="total-price">5000000</p>
         </div>
       </div>
     </div>
-        <jsp:include page = "./component/footer.jsp" />
-    </body>
+    <jsp:include page="./component/footer.jsp" />
+    <script src="./dist/checkout.js"></script>
+  </body>
 </html>

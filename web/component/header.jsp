@@ -91,7 +91,10 @@
                     <div
                         class="header__menu__item header__menu__right__item user--option"
                         >
-                        <a href="/btl_web/login.jsp"> Đăng nhập</i></a>
+                         <a class="tooltip" href="/btl_web/login.jsp">
+                    <i class="fal fa-user"></i>
+                    <span>Đăng nhập</span>
+                  </a>
                     </div>
 
                     <%
@@ -117,11 +120,9 @@
             <div class="input--search">
                 <form method="GET" action = "search">
                         <input type="text" name = "key" placeholder="Search Products" />
-                    <button type ="submit">
+                    <button class="btn-submit" type="submit">
                         <i class="fal fa-search"></i> 
                     </button>
-                   
-
                 </form>
             </div>
             <ul class="d-flex right--options">

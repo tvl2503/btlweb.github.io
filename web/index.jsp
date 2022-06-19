@@ -192,7 +192,7 @@
                                 <div class="d-flex justify-between align-center content--card">
                                     <div class="left--card">
                                         <p class="f-20 pb-4"><%=i.getTitle()%></p>
-                                        <p class="f-14"><%=i.getPrice()%></p>
+                                        <p class="f-14 price-product"><%=i.getPrice()%></p>
                                     </div>
                                     <a
                                         href="/btl_web/product?id=<%=i.getId()%>"

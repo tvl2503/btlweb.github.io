@@ -94,8 +94,8 @@
                    ><%=i.getTitle()%></a
                 >
                 <div class="d-flex">
-                  <p class="f-14"><%=i.getPrice()%></p>
-                  <p class="discount--price"><%=i.getOldPrice()%></p>
+                  <p class="f-14 convert-price"><%=i.getPrice()%></p>
+                  <p class="discount--price convert-price"><%=i.getOldPrice()%></p>
                 </div>
               </div>
             </div>

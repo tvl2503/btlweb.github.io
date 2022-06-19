@@ -630,6 +630,11 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
       -ms-flex-pack: center;
           justify-content: center;
   cursor: pointer;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media only screen and (max-width: 991px) {
@@ -2338,7 +2343,7 @@ input {
 }
 
 .container--collections .swiper-pagination span::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -2396,8 +2401,8 @@ input {
   border-radius: 50%;
   background: #000;
   margin-top: 0;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .header--collections .swiper-button-prev:hover,
@@ -2411,7 +2416,8 @@ input {
 }
 
 @media only screen and (max-width: 991px) {
-  .header--collections .swiper-button-next, .header--collections .swiper-button-prev {
+  .header--collections .swiper-button-next,
+  .header--collections .swiper-button-prev {
     display: none;
   }
 }
@@ -2449,8 +2455,8 @@ input {
   border-radius: 50%;
   background: #fff;
   cursor: pointer;
-  -webkit-transition: all .15s ease-in-out;
-  transition: all .15s ease-in-out;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
 }
 
 .access--card:hover {
@@ -2485,6 +2491,49 @@ input {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip span {
+  position: absolute;
+  top: calc(100% + 8px);
+  font-size: 12px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  border-radius: 4px;
+  min-width: 80px;
+  text-align: center;
+  line-height: normal;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tooltip span::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -5px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.75);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.tooltip:hover span {
+  top: 100%;
+  opacity: 1;
 }
 
 .title--breadcrumb i {
@@ -3217,6 +3266,32 @@ input {
 
 .product__visa img {
   padding-bottom: 20px;
+}
+
+.product__sunNum {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-right: none;
+  border-color: #ddd;
+}
+
+.product__plusNum {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-left: none;
+  border-color: #ddd;
+}
+
+.product__plusNum, .product__sunNum {
+  cursor: pointer;
+}
+
+.product__num input {
+  border-radius: 0;
+  width: 70px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
 }
 
 .upload-container {

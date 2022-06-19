@@ -2,7 +2,9 @@ import { ListQueryIndex } from "../models/shop";
 import { classListToggleElement } from "../utils/classList";
 import { insertStringElement } from "../utils/element/utilsElement";
 import { insertURLParams, removeUrlParameter } from "../utils/params";
+import { qsa } from "../utils/query";
 import DetectScreen from "../utils/resize";
+import { toCurrency } from "../utils/string";
 
 const resizeScreenListener = new DetectScreen(991);
 let isMobile = resizeScreenListener.isMobile;
@@ -122,4 +124,12 @@ let isMobile = resizeScreenListener.isMobile;
     element.addEventListener('click', onHandleModel);
   })
   modal?.addEventListener('click', onHandleModel);
+})();
+
+(function(){
+  const convertPrice = qsa('.convert-price');
+  convertPrice.forEach(node => {
+    const price = +(node?.textContent || 0);
+    node.textContent = toCurrency(price);
+  })
 })();

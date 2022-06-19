@@ -62,7 +62,7 @@ const uploadGenerateLinkImage = async (file: File, idTemplate: string) => {
   const templateId = document.getElementById(idTemplate) as HTMLDivElement;
   const imageMatchId = templateId.querySelector('img') as HTMLImageElement;
   const response = await uploadImage(file);
-  const url = response.data;
+  const url = response.urls?.[0];
   if (!url) {
     alert(response?.message || "Không thể tải lên ảnh, xin thử lại");
     imageMatchId?.remove();

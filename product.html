@@ -239,9 +239,10 @@
         <del class="product__priceG">$17.00</del>
         <p class="product__quantity">Quantity</p>
         <div class="product__num">
-          <button id ="jsSub" class="product__sunNum">-</button>
-          <span class="product__numPr" id ="jsNum">1</span>
-          <button id="jsPlus" class="product__plusNum">+</button>
+          <input type ="text" style ="display: none;"  name="idProduct" value ="<%=p.getId()%>" />
+          <button type ="button" id ="jsSub" class="product__sunNum">-</button>
+          <input disabled type ="number"  id ="jsNum" value ="1" name ="quantity" />
+          <button type ="button" id="jsPlus" class="product__plusNum">+</button>  
         </div>
         <button class="product__cart">Add to cart</button>
         <h3>Buy more save more!</h3>
@@ -269,24 +270,6 @@
       </div>
     </div>
     <script>
-      // const tru = () => {
-      //     let input = document.getElementById("jsNum");
-      //     let num =Number.parseInt( input.innerText);
-      //     if(num < 2){
-      //         input.textContent = 1;
-      //     }
-      //     else{
-      //         input.textContent = num - 1;
-      //     }
-          
-      //     num --;
-      // };
-      // const plus = () => {
-      //     let input = document.getElementById("jsNum");
-      //     let num =Number.parseInt( input.innerText);
-      //     input.textContent = num + 1;
-      //     num ++;
-      // };
     </script>
     <script src="/dist/product.js"></script>
   </body>

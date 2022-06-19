@@ -1,5 +1,5 @@
 import Swiper, { Navigation } from "swiper";
-import { qs } from "../utils/query";
+import { gid, qs } from "../utils/query";
 import { useState } from "../utils/state";
 
 (function () {
@@ -29,30 +29,31 @@ import { useState } from "../utils/state";
 
 (function(){
   const [quantity, setQuantity] = useState<number>(1);
-  const btnDecrement = qs('#jsSub');
-  const btnIncrement = qs('#jsPlus');
-  const quantityProduct = qs('#jsNum');
+  const btnSub = gid('jsSub');
+  const btnIncrement = gid('jsPlus');
+  const input = gid('jsNum') as HTMLInputElement;
 
-  const quantityIsValid = () => {
-    return quantity() > 1;
+  const setValueInput = () => {
+    input.value = quantity().toString();
   }
-  const setTextContent = () => {
-    quantityProduct!.textContent = quantity().toString();
-  }
-  const onIncrement = () => {
-    setQuantity(quantity() + 1);
-    setTextContent();
-  }
+
+  setValueInput();
 
   const onDecrement = () => {
-    if (!quantityIsValid()) {
+    const q = quantity();
+    if (q === 1) {
       return;
     }
-    setQuantity(quantity() - 1);
-    setTextContent();
+    setQuantity(q - 1);
+    setValueInput();
   }
 
-  btnDecrement?.addEventListener('click', onDecrement);
+  const onIncrement = () => {
+    setQuantity(quantity() + 1);
+    setValueInput();
+  }
 
-  btnIncrement?.addEventListener('click', onIncrement);
+  btnSub?.addEventListener('click', onDecrement);
+
+  btnIncrement?.addEventListener('click', onIncrement)
 })();

@@ -181,3 +181,28 @@
         }
     }
 }
+
+.product__sunNum {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-right: none;
+  border-color: #ddd;
+}
+.product__plusNum {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-left: none;
+  border-color: #ddd;
+}
+.product__plusNum, .product__sunNum {
+  cursor: pointer;
+}
+.product__num {
+  input {
+    border-radius: 0;
+    width: 70px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+  }
+}

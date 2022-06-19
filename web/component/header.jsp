@@ -85,7 +85,7 @@
                         <div
                             class="header__menu__item header__menu__right__item user--option"
                             >
-                            <a class="tooltip" href="/btl_web/login.jsp"> 
+                            <a class="tooltip" href="/btl_web/logout"> 
                               <i class="fal fa-user"></i>
                               <span>Đăng xuất</span>
                             </a>

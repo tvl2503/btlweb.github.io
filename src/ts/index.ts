@@ -1,6 +1,8 @@
 import Swiper, { Navigation, Pagination } from "swiper";
 import { insertStringElement } from "../utils/element/utilsElement";
 import { classListToggleElement } from "../utils/classList";
+import { qsa } from "../utils/query";
+import { toCurrency } from "../utils/string";
 
 new Swiper(".swiper--container", {
   pagination: {
@@ -76,4 +78,13 @@ new Swiper(".swiper--collection", {
       });
     });
   }
+})();
+
+
+(function(){
+  const priceProduct = qsa('.price-product');
+  priceProduct.forEach(node => {
+    const price = +(node?.textContent || 0);
+    node.textContent = toCurrency(price);
+  });
 })();

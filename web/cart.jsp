@@ -81,7 +81,10 @@
                         <span><%=total%></span>
                     </div>
                     <div class="cart__checkout__btn">
-                        <button>Thanh toán</button>
+                        <a href = "checkout">
+                            <button>Thanh toán</button>
+                        </a>
+                        
                     </div>
                 </div>
             </div>

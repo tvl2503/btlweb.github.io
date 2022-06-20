@@ -1,0 +1,55 @@
+$display: (flex, block, none, grid) !default;
+$width-percent: (.25, .5, .75, 1) !default;
+$overflow: (hidden, visible, auto, scroll) !default;
+
+$property_flex: (
+  start: flex-start,
+  center: center,
+  end: flex-end,
+  between: space-between,
+) !default;
+
+$property_text: (start, center, end) !default;
+
+@each $var in $overflow {
+  .overflow-#{$var} {
+    overflow: $var;
+  }
+}
+
+@each $d in $display {
+  .d-#{$d} {
+    display: $d;
+  }
+}
+@each $width in $width-percent {
+  .w-#{$width} {
+    width: percentage($width);
+  }
+}
+
+@each $flexName, $flexProperty in $property_flex {
+  .justify-#{$flexName} {
+    justify-content: $flexProperty;
+  }
+  .align-#{$flexName} {
+    align-items: $flexProperty;
+  }
+}
+
+@each $text in $property_text {
+  .text-#{$text} {
+    text-align: $text;
+  }
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.w-100 {
+  width: 100%;
+}

@@ -1,0 +1,178 @@
+.container--items {
+  max-width: 1500px;
+  .items--header {
+    color: $main-color;
+    text-transform: capitalize;
+    @include tablet {
+      p {
+        font-size: 24px !important;
+      }
+    }
+  }
+  .content--select {
+    position: relative;
+    .select--content {
+      color: #000;
+      @include padding(10, 10);
+      border: 1px solid #000;
+      border-radius: 4px;
+      cursor: pointer;
+      min-width: 150px;
+      @include tablet {
+        p {
+          font-size: 20px !important;
+        }
+      }
+    }
+    i {
+      transition: all 0.2s ease;
+    }
+    ul {
+      z-index: 2;
+      transition: all 0.2s ease-in-out;
+      opacity: 0;
+      pointer-events: none;
+      @include translate(0, 20%);
+      position: absolute;
+      list-style: none;
+      width: 100%;
+      @include padding(20, 10);
+      @extend .f-16;
+      background: $white;
+      @extend .shadow-sm;
+      border-radius: 8px;
+      top: calc(100% + 10px);
+      li {
+        padding-bottom: 10px;
+        &:last-child {
+          @include padding(0, 0);
+        }
+        cursor: pointer;
+      }
+    }
+    .show {
+      @include translate(0, 0);
+      opacity: 1;
+      pointer-events: visible;
+    }
+  }
+}
+.single--product {
+  transition: all 0.64s cubic-bezier(0.15, 0.75, 0.5, 1);
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  .options--product {
+    position: absolute;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    bottom: -50px;
+    pointer-events: none;
+    li {
+      width: 45px;
+      height: 45px;
+      @include flex(center, center);
+      background: $white;
+      border-right: 1px solid #eee;
+      transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      cursor: pointer;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        @include translate(-50%, 0);
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid $black;
+        visibility: hidden;
+        transition: all .25s ease-in-out;
+        @include translate(-50%, -100%);
+        opacity: 0;
+      }
+      &::before {
+        content: attr(data-tooltip);
+        position: absolute;
+        top: -45px;
+        min-width: max-content;
+        @extend .f-12;
+        background: $black;
+        color: $white;
+        @include padding(6, 6);
+        border-radius: 4px;
+        @include translate(0, -20%);
+        visibility: hidden;
+        transition: all .25s ease-in-out;
+        opacity: 0;
+      }
+      i {
+        transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      &:hover {
+        background: $black;
+        &::after, &::before {
+          opacity: 1;
+          visibility: visible;
+        }
+        &::after {
+          @include translate(-50%, 0);
+        }
+        &::before {
+          @include translate(0, 0);
+        }
+        i {
+          color: $white;
+        }
+      }
+      &:first-child {
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+      }
+      &:last-child {
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+      i {
+        font-size: 14px;
+      }
+    }
+  }
+  &:hover {
+    .options--product {
+      bottom: 10px;
+      pointer-events: visible;
+      opacity: 1;
+    }
+  }
+}
+.list--products {
+  .image--product {
+    height: 0;
+    padding-top: 360px;
+    position: relative;
+    overflow: hidden;
+    img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      @extend .shadow-sm;
+    }
+  }
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include sm-mobile {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

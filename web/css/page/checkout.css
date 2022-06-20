@@ -1,0 +1,127 @@
+
+  input {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border-color: #d9d9d9;
+  }
+  p{
+    margin-top: 0;
+  }
+  .content {
+    display: flex;
+  }
+  .content-left {
+    width: 60%;
+    box-sizing: border-box;
+    padding: 40px 80px 40px 150px;
+    min-height: 100vh;
+  }
+  .header-content {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+  .content-left h3 {
+    font-size: 30px;
+    font-weight: normal;
+  }
+  .content-left .header {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  .content-left .input-one {
+    width: 100%;
+    margin-top: 16px;
+  }
+  .content-left .name {
+    display: flex;
+    gap: 20px;
+  }
+  .content-left .input-two {
+    width: 100%;
+  }
+  .content-left button {
+    background-color: #0084FF;
+    cursor: pointer;
+    border: 1px solid #0084FF;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: 500;
+    padding: 12px;
+    text-align: center;
+    margin-top: 16px;
+    width: 100%;
+    font-size: 16px;
+    text-transform: capitalize;
+    transition: all .3s ease-in-out;
+  }
+  .content-left button:disabled {
+    opacity: .35;
+  }
+  .content-left button:hover {
+   border-color: #0079eb;
+   background-color: #0079eb;
+  }
+  .content-left button:focus {
+    border-color: #006fd6;
+    background: #006fd6;
+  }
+  
+  /* =================== right */
+  .content-right {
+    box-sizing: border-box;
+    width: 40%;
+    background-color: #fafafa;
+    padding: 70px 80px 40px 80px;
+  }
+  .content-right img {
+    border-left: 1px solid #e1e1e1;
+    border-radius: 8px;
+    border: 1px rgba(0,0,0,0.1) solid;
+  }
+  .content-right .item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  } 
+  .content-right .item-left{
+    display: flex;
+    align-items: center;
+  }
+  .item-left-content{
+    margin-left: 20px;
+  }
+  .content-right hr{
+    margin: 30px 0;
+  }
+  .content-right input {
+    width: 100%;
+  }
+  
+  .content-right button {
+    background-color: #1878b9;
+    border: 1px transparent solid;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 14px;
+    font-family: inherit;
+  }
+  .row{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  .total-price{
+    font-size: 22px;
+    font-weight: 600;
+  }
+  

@@ -1,0 +1,37 @@
+
+
+
+.btn {
+    padding: 10px 32px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    @extend .f-14;
+    cursor: pointer;
+    line-height: 24px;
+    font-family: $font-family;
+    transition: all .3s ease-in-out;
+    &:hover {
+        transform: scale(1.05);
+    }
+    &[disabled] {
+        background: #ddd !important;
+    }
+}
+
+.btn-primary {
+    border: none;
+}
+.btn-outlined {
+    border: 1px solid #000;
+    background: transparent;
+    color: #000;
+}
+@each $color, $colorValue in $colors {
+    .btn-#{$color} {
+        @if not ($color == 'white') {
+            color: #fff;
+        }
+        background: $colorValue;
+    }
+}

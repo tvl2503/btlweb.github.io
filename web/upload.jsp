@@ -51,13 +51,16 @@
           ></textarea>
         </div>
         <div class="form-control">
+          <input id="old-price" class="w-100" type="number" name="oldPrice" placeholder="Giá gốc">
+        </div>
+        <div class="form-control">
           <input
             id="price"
             class="w-100"
             type="number"
             name="price"
             required
-            placeholder="Giá"
+            placeholder="Giá hiện tại"
           />
         </div>
         <div class="form-control">
@@ -77,7 +80,7 @@
           />
         </div>
         <div class="text-center">
-          <button type="button" class="btn btn-submit">Hoàn thành</button>
+          <button type="button" class="btn btn-submit btn-submit-form">Hoàn thành</button>
         </div>
       </div>
     <% if (request.getAttribute("success") != null) { %>

@@ -59,7 +59,7 @@ public class UploadServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        request.getRequestDispatcher("upload.jsp").forward(request, response);
     }
 
     /**
@@ -77,11 +77,16 @@ public class UploadServlet extends HttpServlet {
         String description = request.getParameter("description");
         String price = request.getParameter("price");
         String imageURL = request.getParameter("url");
-        String oldPrice = request.getParameter("discount_price");
+        String oldPrice = request.getParameter("oldPrice");
+        System.out.println(title);
+        System.out.println(description);
+        System.out.println(imageURL);
+        System.out.println(oldPrice);
+        System.out.println(price);
         
         ProductDAO createProduct = new ProductDAO();
-        Product newProduct = createProduct.createProduct(title, description, Float.parseFloat(price), imageURL, Float.parseFloat(oldPrice));
-        if (newProduct == null) {
+        Boolean isSuccess = createProduct.createProduct(title, description, Float.parseFloat(price), imageURL, Float.parseFloat("500"));
+        if (!isSuccess) {
             request.setAttribute("error", "Information is not valid, please fill all information");
             request.getRequestDispatcher("upload.jsp").forward(request, response);
         } else {

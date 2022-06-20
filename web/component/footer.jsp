@@ -9,46 +9,46 @@
         <div class="footer">
       <div class="footer__sub">
           <div class="footer__sub-colums">
-            <h3>Information</h3>
+            <h3>Thông tin</h3>
             <ul>
-              <li><a href="#">Privacy policy</a></li>
-              <li><a href="#">Refund policy</a></li>
-              <li><a href="#">Shipping & Return</a></li>
-              <li><a href="#">Term & conditions</a></li>
+              <li><a href="#">Điều khoản sử dụng</a></li>
+              <li><a href="#">Điều khoản trả hàng</a></li>
+              <li><a href="#">Giao hàng vàng trả hàng</a></li>
+              <li><a href="#">Điều khoản người dùng</a></li>
             </ul>
           </div>
           <div class="footer__sub-colums">
-            <h3>Quick links</h3>
+            <h3>Liên kết </h3>
             <ul>
-              <li><a href="#">My account</a></li>
-              <li><a href="#">Cart</a></li>
-              <li><a href="#">Wishlist</a></li>
-              <li><a href="#">Product Compare</a></li>
+              <li><a href="#">Tài khoản</a></li>
+              <li><a href="cart">Giỏ hàng</a></li>
+              <li><a href="#">Yêu thích</a></li>
+              <li><a href="#">So sánh sản phẩm</a></li>
             </ul>
           </div>
           <div class="footer__sub-colums">
-            <h3>Our store</h3>
+            <h3>Cửa hàng</h3>
             <ul>
               <div class="footer__sub--colum3">
-                <p>Find a location nearest 
+                <p>Tìm địa chỉ gần bạn
                   <br>
-                  you.
-                  <a href="#"><span>See Our Stores</span></a>
+       
+                  <a href="store"><span>Cửa hàng</span></a>
                 </p>
               </div>
               <div class="footer__sub--colum3">
                 <a href="#"> +84 (0)387 392 056</a>
-                <p>hello@domain.com</p>
+                <p>Team4@gmail.com</p>
               </div>
             </ul>
           </div>
           <div class="footer__sub-colums">
-            <h3>Subscribe</h3>
-              <p>Enter your email below to be the first to know about new collections and product launches.</p>
+            <h3>Đăng ký</h3>
+              <p>Nhập email của bạn vào bên dưới để là người đầu tiên biết về bộ sưu tập mới và ra mắt sản phẩm.</p>
               <div>
                 <form action="">
                   <div class="footer__sub-colum4">
-                    <input type="text" placeholder="Enter your email">
+                    <input type="text" placeholder="Nhập email">
                     <i class="far fa-arrow-right"></i>
                   </div>
                 </form>

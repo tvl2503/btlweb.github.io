@@ -42,7 +42,23 @@ public class CartDAO extends DBContext {
         }
         return null;
     }
-    
+    public float totalMoney(int idUser){
+        float total = 0;
+        String sql = "select * from products inner join Carts on Carts.id_product = products.id  where Carts.id_user = ?";
+         try{
+             PreparedStatement st = connection.prepareStatement(sql);
+             st.setInt(1, idUser);
+             ResultSet rs = st.executeQuery();
+             
+             while(rs.next()){
+                 total += rs.getFloat("price") * rs.getInt("quantity");
+             }
+ 
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+        return total;
+    }
      public Cart getProductById(int idProduct, int idUser){
         String sql = "select * from products inner join Carts on Carts.id_product = Products.id  where Carts.id_user = ? and Products.id = ?";
         try{
@@ -135,5 +151,14 @@ public class CartDAO extends DBContext {
             System.out.println(e);
         }
     }
-     
+     public void deleteCart(int idUser ){
+        String sql = " delete from Carts where id_user = ?;";
+        try{
+             PreparedStatement st = connection.prepareStatement(sql);
+             st.setInt(1, idUser);
+             st.executeUpdate();
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+    }
 }

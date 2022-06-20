@@ -14,6 +14,9 @@ Tran Vo --%> <%@page import="model.Cart"%>
         <jsp:include page="./component/header.jsp" />
         <div class="content layout--top">
             <div class="content-left">
+                <form method="post" action="checkout">
+                    
+               
                 <h3>Thanh toán đơn hàng</h3>
                 <p class="header-content">Thông tin liên lạc</p>
                 <input
@@ -21,6 +24,7 @@ Tran Vo --%> <%@page import="model.Cart"%>
                     placeholder="Email hoặc số điện thoại"
                     class="input-one"
                     id="info-user"
+                    name ="phone"
                     />
                 <p class="header-content">Thông tin giao hàng</p>
                 <div class="name d-block">
@@ -29,6 +33,7 @@ Tran Vo --%> <%@page import="model.Cart"%>
                         type="text"
                         placeholder="Name..."
                         class="input-two w-100"
+                        name ="name"
                         />
                 </div>
                 <input
@@ -36,9 +41,11 @@ Tran Vo --%> <%@page import="model.Cart"%>
                     id="address"
                     placeholder="Địa chỉ..."
                     class="input-one"
+                    name ="address"
                     />
-                <input type="text" placeholder="Lưu ý..." class="input-one" />
-                <button type="submit" class="submit-checkout">Submit checkout</button>
+                <input type="text" placeholder="Lưu ý..." class="input-one" name="note" />
+                <button type="submit" >Xác nhận thanh toán</button>
+                 </form>
             </div>
             <div class="content-right">
                 <%

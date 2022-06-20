@@ -5,6 +5,7 @@
 package controller;
 
 import dal.CartDAO;
+import dal.OrderDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -86,7 +87,26 @@ public class CheckoutServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       request.setCharacterEncoding("UTF-8");
+       HttpSession session = request.getSession();
+       User ad = (User)session.getAttribute("account");
+       String phone = request.getParameter("phone");
+       String name = request.getParameter("name");
+       String address = request.getParameter("address");
+       String note = request.getParameter("note");
+       CartDAO cd = new CartDAO();
+       float total = cd.totalMoney(ad.getId());
+       OrderDAO od = new OrderDAO();
+       od.addOrder(ad.getId(), phone, name, address, note, (int)total);
+       List<Cart> list =  cd.getCart(ad.getId());
+       cd.deleteCart(ad.getId());
+        System.out.println(list.size());
+       int orderId = od.getIdOrderByIdUser(ad.getId());
+        System.out.println(orderId);
+       for(Cart i: list){
+           od.addOrderDetail(orderId,i.getProduct().getId(), i.getQuantity(), (int)(i.getProduct().getPrice()*i.getQuantity()));
+       }
+       response.sendRedirect("index");
     }
 
     /**

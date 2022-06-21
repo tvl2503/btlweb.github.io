@@ -127,35 +127,35 @@ const query_1 = __webpack_require__(/*! ../utils/query */ "./src/utils/query.ts"
         }, '', url);
     }));
 })();
-(function () {
-    const bagShopping = (0, query_1.qs)('.shopping--bag');
-    const cartUser = (0, query_1.qs)('.cart--user');
-    const closeButton = (0, query_1.qs)('.close--button', cartUser);
-    const createModel = (0, utilsElement_1.modelElement)('cart-model');
-    const onHandleCart = () => {
-        const model = (0, query_1.gid)('cart-model');
-        const isActive = (0, classList_1.classListToggleElement)(cartUser, 'active-cart');
-        if (isActive) {
-            (0, utilsElement_1.insertStringElement)(document.body, createModel, 'afterbegin');
-            const modelElement = (0, query_1.gid)('cart-model');
-            modelElement === null || modelElement === void 0 ? void 0 : modelElement.addEventListener('click', onHandleCart);
-        }
-        else {
-            model === null || model === void 0 ? void 0 : model.remove();
-        }
-    };
-    bagShopping === null || bagShopping === void 0 ? void 0 : bagShopping.addEventListener('click', onHandleCart);
-    closeButton === null || closeButton === void 0 ? void 0 : closeButton.addEventListener('click', onHandleCart);
-})();
-(function (d) {
-    const cartUser = (0, query_1.qs)('.cart--user');
-    const headerCart = (0, query_1.qs)('h5', cartUser);
-    const boxTotal = (0, query_1.qs)('.total--checkout', cartUser);
-    const itemsCheckout = (0, query_1.qs)('.items', cartUser);
-    const getBoundingHeader = headerCart === null || headerCart === void 0 ? void 0 : headerCart.getBoundingClientRect();
-    const boxTotalBounding = boxTotal === null || boxTotal === void 0 ? void 0 : boxTotal.getBoundingClientRect();
-    itemsCheckout.style.height = `calc(100vh - ${getBoundingHeader.height + boxTotalBounding.height}px)`;
-})(document);
+//(function () {
+//    const bagShopping = (0, query_1.qs)('.shopping--bag');
+//    const cartUser = (0, query_1.qs)('.cart--user');
+//    const closeButton = (0, query_1.qs)('.close--button', cartUser);
+//    const createModel = (0, utilsElement_1.modelElement)('cart-model');
+//    const onHandleCart = () => {
+//        const model = (0, query_1.gid)('cart-model');
+//        const isActive = (0, classList_1.classListToggleElement)(cartUser, 'active-cart');
+//        if (isActive) {
+//            (0, utilsElement_1.insertStringElement)(document.body, createModel, 'afterbegin');
+//            const modelElement = (0, query_1.gid)('cart-model');
+//            modelElement === null || modelElement === void 0 ? void 0 : modelElement.addEventListener('click', onHandleCart);
+//        }
+//        else {
+//            model === null || model === void 0 ? void 0 : model.remove();
+//        }
+//    };
+//    bagShopping === null || bagShopping === void 0 ? void 0 : bagShopping.addEventListener('click', onHandleCart);
+//    closeButton === null || closeButton === void 0 ? void 0 : closeButton.addEventListener('click', onHandleCart);
+//})();
+//(function (d) {
+//    const cartUser = (0, query_1.qs)('.cart--user');
+//    const headerCart = (0, query_1.qs)('h5', cartUser);
+//    const boxTotal = (0, query_1.qs)('.total--checkout', cartUser);
+//    const itemsCheckout = (0, query_1.qs)('.items', cartUser);
+//    const getBoundingHeader = headerCart === null || headerCart === void 0 ? void 0 : headerCart.getBoundingClientRect();
+//    const boxTotalBounding = boxTotal === null || boxTotal === void 0 ? void 0 : boxTotal.getBoundingClientRect();
+//    itemsCheckout.style.height = `calc(100vh - ${getBoundingHeader.height + boxTotalBounding.height}px)`;
+//})(document);
 
 
 /***/ }),

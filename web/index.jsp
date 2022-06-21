@@ -169,7 +169,7 @@
                 class="d-flex justify-between align-center pb-48 header--collections"
                 >
 
-                <p class="f-28 weight-500 title--collections">Season Collection</p>
+                <p class="f-28 weight-500 title--collections">Bộ sưu tập theo mùa</p>
                 <div class="d-flex justify-center align-center swiper--options">
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
@@ -257,7 +257,7 @@
                 
             </div>
             <div class="pt-20 text-center">
-                <a href="/btl_web/store" > <button class="btn btn-black text-uppercase">Watch more</button></a>
+                <a href="/btl_web/store" > <button class="btn btn-black text-uppercase">Xem thêm</button></a>
             </div>
         </div>
         <jsp:include page = "./component/footer.jsp" />

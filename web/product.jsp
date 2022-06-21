@@ -57,7 +57,6 @@
      
       </div>
       <div class="product">
-        <div class="product__icon"><i class="bx bx-star"></i></div>
         <h1 class="product__title"><%=p.getTitle()%></h1>
         <span class="product__price"><%=p.getPrice()%></span>
         <del class="product__priceG"><%=p.getOldPrice()%></del>

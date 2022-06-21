@@ -28,13 +28,13 @@
       <div class="form--group container--login">
           <h3>${requestScope.error}</h3>
           <form method="post" action ="register" class="form-control">
-          <h5>Register</h5>
+          <h5>Đăng ký</h5>
           <div class="d-grid gap-12">
             <div class="form-group">
               <input
                 data-validate="required"
                 type="text"
-                placeholder="First Name"
+                placeholder="Họ"
                 required
                 name ="firstName"
               />
@@ -43,7 +43,7 @@
               <input
                 data-validate="name"
                 type="text"
-                placeholder="Last Name"
+                placeholder="Tên"
                 required
                 name ="lastName"
               />
@@ -61,8 +61,8 @@
               <input
                 data-validate="password"
                 type="password"
-                placeholder="Password"
-                required
+                placeholder="Mật khẩu"
+                requiredkhẩu
                 name="password"
               />
               <i class="far fa-eye"></i>

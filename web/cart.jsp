@@ -80,11 +80,19 @@
                         <span>Tổng tiền</span>
                         <span><%=total%></span>
                     </div>
+                        <% if(list.size() == 0) {%>
+                    <div class="cart__checkout__btn">
+                        <a href = "index">
+                            <button>Thanh toán</button>
+                        </a>
+                        <%
+                    }else{ %>
                     <div class="cart__checkout__btn">
                         <a href = "checkout">
                             <button>Thanh toán</button>
                         </a>
-                        
+                        <%
+                    }%>
                     </div>
                 </div>
             </div>

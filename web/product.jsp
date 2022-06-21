@@ -72,7 +72,7 @@
         </div>
              <button type ="submit" class="product__cart">Thêm vào giỏ hàng</button>
         </form>
-        <h3>Mua nhiều hơn tiết kiệm nhiều hơn!</h3>
+        <p><%=p.getDescription()%></p>
         <div class="product__sale">
           <div class="product__sale1">
             <div class="product__ifo">

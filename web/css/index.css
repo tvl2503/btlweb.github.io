@@ -2674,7 +2674,7 @@ input {
 }
 
 .grid--products {
-  width: calc(100% - 320px);
+  width: 100%;
 }
 
 @media only screen and (max-width: 991px) {
@@ -2770,7 +2770,7 @@ input {
 
 .products--grid .product--image {
   position: relative;
-  height: 350px;
+  height: 400px;
   overflow: hidden;
 }
 
@@ -3206,10 +3206,11 @@ input {
 }
 
 .product__sale {
-  border: 1px solid #000;
+  border: 1px solid #ddd;
   border-radius: 5px;
   padding: 0 20px;
   margin-bottom: 20px;
+  margin-top: 20px; 
 }
 
 .product__sale1 {
